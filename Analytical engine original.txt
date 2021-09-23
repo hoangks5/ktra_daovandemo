@@ -1,0 +1,151 @@
+Analytical Engine 
+The Analytical Engine was a proposed mechanical general- purpose computer designed by English mathematician and computer pioneer Charles Babbage.[2][3] It was first described in 1837 as the successor to Babbage's difference engine, which was a design for a simpler mechanical computer.[4] 
+The Analytical Engine incorporated an arithmetic logic unit, control flow in the form of conditional branching and loops, and integrated memory, making it the first design for a general-purpose computer that could be described in modern terms as Turing- complete.[5][6] In other words, the logical structure of the Analytical Engine was essentially the same as that which has dominated computer design in the electronic era.[3] The Analytical Engine is one of the most successful achievements of Charles Babbage. 
+Babbage was never able to complete construction of any of his
+machines due to conflicts with his chief engineer and inadequate funding.[7][8] It was not until 1941 that Konrad Zuse built the first general-purpose computer, Z3, more than a century after Babbage had proposed the pioneering Analytical Engine in 1837.[3] 
+Design 
+Babbage's first attempt at a mechanical computing device, the Difference Engine, was a special-purpose machine designed to tabulate logarithms and trigonometric functions by evaluating finite differences to create approximating polynomials. Construction of this machine was never completed; Babbage had 
+     
+conflicts with his chief engineer, Joseph Clement, and ultimately 
+the British government withdrew its funding for the project.[9][10][11] 
+During this project, Babbage realised that a much more general design, the Analytical Engine, was possible.[9] The work on the design of the Analytical Engine started in c. 1833.[12][4] 
+The input, consisting of programs ("formulae") and data[13][9] was to be provided to the machine via punched cards, a method being used at the time to direct mechanical looms such as the Jacquard loom.[14] For output, the machine would have a printer, a curve plotter and a bell.[9] The machine would also be able to punch numbers onto cards to be read in later. It employed ordinary base- 10 fixed-point arithmetic.[9] 
+There was to be a store (that is, a memory) capable of holding 1,000 numbers of 40 decimal digits[15] each (ca. 16.6 kB). An arithmetic unit (the "mill") would be able to perform all four arithmetic operations, plus comparisons and optionally square roots.[16] Initially (1838) it was conceived as a difference engine curved back upon itself, in a generally circular layout, with the long store exiting off to one side.[17] Later drawings (1858) depict a regularised grid layout.[18] Like the central processing unit (CPU) in a modern computer, the mill would rely upon its own internal procedures, to be stored in the form of pegs inserted into rotating drums called "barrels", to carry out some of the more complex instructions the user's program might specify.[7] 
+The programming language to be employed by users was akin to modern day assembly languages. Loops and conditional branching were possible, and so the language as conceived would have been Turing- complete as later defined by Alan Turing. Three different types of punch cards were used: one for arithmetical operations, one for numerical constants, and one for load and store operations, transferring numbers from the store to the arithmetical unit or back. There were three separate readers for the three types of cards. Babbage developed some two dozen programs for the Analytical Engine between 1837 and 1840, and one program later.[14][19] These programs treat polynomials, iterative formulas, Gaussian elimination, and Bernoulli numbers.[14][20] 
+In 1842, the Italian mathematician Luigi Federico Menabrea published a description of the engine in French,[21] based on lectures Babbage gave when he visited Turin in 1840.[22] In 1843, the description was translated into English and extensively annotated by Ada Lovelace, who had become interested in the engine eight years earlier.[13] In recognition of her additions to Menabrea's paper, which included a way to calculate Bernoulli numbers using the machine (widely considered to be the first complete computer program), she has been described as the first computer programmer. 
+Construction 
+Late in his life, Babbage sought ways to build a simplified version of the machine, and assembled a small part of it before his death in 1871.[1][7][24] 
+In 1878, a committee of the British Association for the Advancement of Science described the Analytical Engine as "a marvel of mechanical ingenuity", but recommended against constructing it. The committee acknowledged the usefulness and value of the machine, but could not estimate the cost of building it, and were unsure whether the machine would function correctly after being built.[25][26] 
+Intermittently from 1880 to 1910,[27] Babbage's son Henry Prevost
+Babbage was constructing a part of the mill and the printing
+apparatus. In 1910 it was able to calculate a (faulty) list of
+multiples of pi.[28] This constituted only a small part of the whole
+engine; it was not programmable and had no storage. (Popular
+images of this section have sometimes been mislabelled, implying
+that it was the entire mill or even the entire engine.) Henry
+Babbage's "Analytical Engine Mill" is on display at the Science
+Museum in London.[23] Henry also proposed building a
+demonstration version of the full engine, with a smaller storage
+capacity: "perhaps for a first machine ten (columns) would do,
+with fifteen wheels in each".[29] Such a version could manipulate
+20 numbers of 25 digits each, and what it could be told to do with
+those numbers could still be impressive. "It is only a question of cards and time", wrote Henry Babbage in 1888, "... and there is no reason why (twenty thousand) cards should not be used if necessary, in an Analytical Engine for the purposes of the mathematician".[29] 
+In 1991, the London Science Museum built a complete and working specimen of Babbage's Difference Engine No. 2, a design that incorporated refinements Babbage discovered during the development of the Analytical Engine.[5] This machine was built using materials and engineering tolerances that would have been available to Babbage, quelling the suggestion that Babbage's designs could not have been produced using the manufacturing technology of his time.[30] 
+In October 2010, John Graham-Cumming started a "Plan 28" campaign to raise funds by "public subscription" to enable serious historical and academic study of Babbage's plans, with a view to then build and test a fully working virtual design which will then in turn enable construction of the physical Analytical Engine.[31][32][33] As of May 2016, actual construction had not been attempted, since no consistent understanding could yet be obtained from Babbage's original design drawings. In particular it was unclear whether it could handle the indexed variables which were required for Lovelace's Bernoulli program.[34] By 2017, the "Plan 28" effort reported that a searchable database of all catalogued material was available, and an initial review of Babbage's voluminous Scribbling Books had been completed.[35] 
+Many of Babbage's original drawings have been digitized and are publicly available online.[36] 
+Instruction set 
+Babbage is not known to have written down an explicit set of instructions for the engine in the manner of a modern processor manual. Instead he showed his programs as lists of states during their execution, showing what operator was run at each step with little indication of how the control flow would be guided. 
+Allan G. Bromley has assumed that the card deck could be read in forwards and backwards directions as a function of conditional branching after testing for conditions, which would make the engine Turing- complete: 
+ 
+Henry Babbage's Analytical Engine Mill, built in 1910,[23] in the Science Museum (London) 
+  
+         
+...the cards could be ordered to move forward and reverse (and hence to loop)...[14] 
+The introduction for the first time, in 1845, of user operations for a variety of service functions including, most importantly, an effective system for user control of looping in user programs. There is no indication how the direction of turning of the operation and variable cards is specified. In the absence of other evidence I have had to adopt the minimal default assumption that both the operation and variable cards can only be turned backward as is necessary to implement the loops used in Babbage's sample programs. There would be no mechanical or microprogramming difficulty in placing the direction of motion under the control of the user.[37] 
+In their emulator of the engine, Fourmilab say: 
+The Engine's Card Reader is not constrained to simply process the cards in a chain one after another from start to finish. It can, in addition, directed by the very cards it reads and advised by whether the Mill's run-up lever is activated, either advance the card chain forward, skipping the intervening cards, or backward, causing previously-read cards to be processed once again. 
+This emulator does provide a written symbolic instruction set, though this has been constructed by its authors rather than based on Babbage's original works. For example, a factorial program would be written as: 
+where the CB is the conditional branch instruction or "combination card" used to make the control flow jump, in this case backward by 11 cards. 
+Influence 
+Predicted influence 
+ 
+Babbage understood that the existence of an automatic computer would kindle interest in the field now known as algorithmic efficiency, writing in his Passages from the Life of a Philosopher, "As soon as an Analytical Engine exists, it will necessarily guide the future course of the science. Whenever any result is sought by its aid, the question will then arise—By what course of calculation can these results be arrived at by the machine in the shortest time?"[38] 
+Computer science 
+From 1872 Henry continued diligently with his father's work and then intermittently in retirement in 1875.[39] 
+Percy Ludgate wrote about the engine in 1914[40] and published his own design for an Analytical Engine in 1908.[41][42] It was drawn up in detail, but never built, and the drawings have never been found. Ludgate's engine would be much smaller (about 8 cubic feet (230 L)) than Babbage's, and hypothetically would be capable of multiplying two 20-decimal-digit numbers in about six seconds.[43] 
+Leonardo Torres y Quevedo wrote about Babbage's engines in Essays on Automatics (1913). The book contains a design for an electromechanical machine capable of calculating the value of a function completely automatically and also included the idea of floating-point arithmetic. Torres demonstrated twice, in 1914 and in 1920, that all of the cogwheel functions of a calculating machine like that of Babbage could be implemented using electromechanical parts. His 1914 analytical machine used a small memory built with electromagnets; his 1920 machine used a typewriter to receive its commands and print its results.[43] 
+Vannevar Bush's paper Instrumental Analysis (1936) included several references to Babbage's work. In the same year he started the Rapid Arithmetical Machine project to investigate the problems of constructing an electronic digital computer.[43] 
+Despite this groundwork, Babbage's work fell into historical obscurity, and the Analytical Engine was unknown to builders of electromechanical and electronic computing machines in the 1930s and 1940s when they began their work, resulting in the need to re-invent many of the architectural innovations Babbage had proposed. Howard Aiken, who built the quickly-obsoleted electromechanical calculator, the Harvard Mark I, between 1937 and 1945, praised Babbage's work likely as a way of enhancing his own stature, but knew nothing of the Analytical Engine's architecture during the construction of the Mark I, and considered his visit to the constructed portion of the Analytical Engine "the greatest disappointment of my life".[44] The Mark I showed no influence from the Analytical Engine and lacked the Analytical Engine's most prescient architectural feature, conditional branching.[44] J. Presper Eckert and John W. Mauchly similarly were not aware of the details of Babbage's Analytical Engine work prior to the completion of their design for the first electronic general-purpose computer, the ENIAC.[45][46] 
+Comparison to other early computers 
+If the Analytical Engine had been built, it would have been digital, programmable and Turing-complete. It would, however, have been very slow. Luigi Federico Menabrea reported in Sketch of the Analytical Engine: "Mr. Babbage believes he can, by his engine, form the product of two numbers, each containing twenty figures, in three minutes".[47] By comparison the Harvard Mark I could perform the same task in just six seconds. A modern PC can do the same thing in well under a billionth of a second. 
+In popular culture 
+The cyberpunk novelists William Gibson and Bruce Sterling co-authored a steampunk novel of alternative history titled The Difference Engine in which Babbage's difference and Analytical Engines became available to Victorian society. The novel explores the consequences and implications of the early introduction of computational technology. 
+Moriarty by Modem, a short story by Jack Nimersheim, describes an alternative history where Babbage's Analytical Engine was indeed completed and had been deemed highly classified by the British government. The characters of Sherlock Holmes and Moriarty had in reality been a set of prototype programs written for the Analytical Engine. This short story follows Holmes as his program is implemented on modern computers and he is forced to compete against his nemesis yet again in the modern counterparts of Babbage's Analytical Engine.[51] 
+A similar setting is used by Sydney Padua in the webcomic The Thrilling Adventures of Lovelace and Babbage.[52][53] It features an alternative history where Ada Lovelace and Babbage have built the Analytical Engine and use it to fight crime at Queen Victoria's request.[54] The comic is based on thorough research on the biographies of and correspondence between Babbage and Lovelace, which is then twisted for humorous effect. 
+The Orion's Arm online project features the Machina Babbagenseii, fully sentient Babbage inspired mechanical computers. Each is the size of a large asteroid, only capable surviving in microgravity conditions, and processes data at 0.5% the speed of a human brain.[55] 
+References 
+1. "Babbage's Analytical Engine, 1834–1871. (Trial model)" (http://collection.sciencemuseum.o rg.uk/objects/co62245/babbages-analytical-engine-1834-1871-trial-model-analytical-engine s). Science Museum. Retrieved 23 August 2017. 
+2. John Graham-Cumming (4 October 2010). "The 100-year leap" (http://radar.oreilly.com/2010/ 10/the-100-year-leap.html). O'Reilly Radar. Retrieved 1 August 2012. 
+3.	"The Babbage Engine: The Engines" (http://www.computerhistory.org/babbage/engines/). Computer History Museum. 2016. Retrieved 7 May 2016. 
+4.	Bromley 1982, p. 196. 
+5.	"Babbage" (http://www.sciencemuseum.org.uk/onlinestuff/stories/babbage.aspx?page=5). 
+Online stuff. Science Museum. 19 January 2007. Retrieved 1 August 2012. 
+6. "Let's build Babbage's ultimate mechanical computer" (https://www.newscientist.com/article/ mg20827915.500-lets-build-babbages-ultimate-mechanical-computer.html). opinion. New Scientist. 23 December 2010. Retrieved 1 August 2012. 
+7. Tim Robinson (28 May 2007). "Difference Engines" (http://www.meccano.us/analytical_engi ne/index.html). Meccano.us. Retrieved 1 August 2012. 
+8. Weber, Alan S (10 March 2000). 19th Century Science, an Anthology (https://books.google.c om/books?id=m4SB4BHzFeIC&pg=PA84). ISBN 9781551111650. Retrieved 1 August 2012. 
+9. Collier 1970, p. chapter 3. 
+10. Lee, John A.n (1995). International Biographical Dictionary of Computer Pioneers (https://bo oks.google.com/books?id=ocx4Jc12mkgC&pg=PA176). ISBN 9781884964473. Retrieved 1 August 2012. 
+11. Balchin, Jon (2003). Science: 100 Scientists Who Changed the World (https://archive.org/det ails/science100scient0000balc). Enchanted Lion Books. p. 105 (https://archive.org/details/sc ience100scient0000balc/page/105). ISBN 97815
+12. Dubbey, J. M.; Dubbey, John Michael (12 February 2004). The Mathematical Work of Charles Babbage (https://books.google.com/books?id=gkWunaISTsgC&q=Analytical+Engin e+1833&pg=PA197). Cambridge University Press. p. 197. ISBN 9780521524766. 
+13.	Menabrea & Lovelace 1843. 
+14.	Bromley 1982, p. 215. 
+15.	Bromley 1982, p. 198. 
+16.	Bromley 1982, p. 211. 
+17.	Bromley 1982, p. 209. 
+18.	"The Babbage Pages: Calculating Engines" (http://www.projects.ex.ac.uk/babbage/engines. 
+html). Projects.ex.ac.uk. 8 January 1997. Retrieved 1 August 2012. 
+19.	Bromley 1990, p. 89. 
+20.	Bromley 2000, p. 11. 
+21. Menabrea, Mr. L.-F. (1842). "Notions sur la machine analytique de M. Charles Babbage" (htt p://www.bibnum.education.fr/calcul-informatique/calcul/notions-sur-la-machine-analytique-d e-m-charles-babbage). Bibliothèque universelle de Genève. 41: 352–376 – via Bibnum. 
+22. Sterling, Bruce (14 May 2017). "Charles Babbage left a computer program in Turin in 1840. Here it is" (https://www.wired.com/beyond-the-beyond/2017/05/charles-babbage-left-comput er-program-turin-1840). Wired. ISSN 1059-1028 (https://www.worldcat.org/issn/1059-1028). Retrieved 10 June 2021. 
+23. "Henry Babbage's Analytical Engine Mill, 1910" (https://collection.sciencemuseum.org.uk/ob jects/co62246/henry-babbages-analytical-engine-mill-1910-analytical-engine-mills). Science Museum. 16 January 2007. Retrieved 1 August 2012. 
+24. Monthly Notices of the Royal Astronomical Society (https://books.google.com/books?id=hBj yAAAAMAAJ&q=%22A+few+years+before+his+death%22). Priestley and Weale. 1910.
+p. 517. 
+25. * Report of the Forty-Eighth Meeting of the British Association for the Advancement of Science (https://www.biodiversitylibrary.org/item/94499#page/174/mode/1up) (Report). London: John Murray. 1879. pp. 92–102. Retrieved 20 December 2015. 
+26. "The Analytical Engine (Report 1879)" (http://www.fourmilab.ch/babbage/baas.html). Fourmilab.ch. Retrieved 20 December 2015. 
+27. Britain), Institute of Actuaries (Great (1950). Proceedings of the centenary assembly of the Institute of Actuaries (https://books.google.com/books?id=osHuAAAAMAAJ&q=Munro+191 0). Printed for the Institute of Actuaries at the University Press. p. 178. 
+28. Randell, Brian (21 December 2013). "2.3. Babbage's Analytical Engine. H. P. Babbage (1910)" (https://books.google.com/books?id=WtqpCAAAQBAJ). The Origins of Digital Computers: Selected Papers. Springer. ISBN 9783642618123. 
+29.	"The Analytical Engine (Henry P. Babbage 1888)" (http://www.fourmilab.ch/babbage/hpb.ht ml). Fourmilab.ch. Retrieved 1 August 2012. 
+30.	"A Modern Sequel — The Babbage Engine" (http://www.computerhistory.org/babbage/mode rnsequel/). Computer History Museum. Retrieved 1 August 2012. 
+31.	"Campaign builds to construct Babbage Analytical Engine" (https://www.bbc.co.uk/news/tec hnology-11530905). BBC News. 14 October 2010. 
+32.	"Building Charles Babbage's Analytical Engine" (http://plan28.org/). Plan 28. 27 July 2009. Retrieved 1 August 2012. 
+33. Markoff, John (7 November 2011). "It Started Digital Wheels Turning" (https://www.nytimes.c om/2011/11/08/science/computer-experts-building-1830s-babbage-analytical-engine.html). The New York Times. ISSN 0362-4331 (https://www.worldcat.org/issn/0362-4331). Retrieved 10 June 2021. 
+34. "Spring 2016 report to the Computer Conservation Society" (http://blog.plan28.org/2016/05/s pring-2016-report-to-computer.html). Plan 28. Retrieved 29 October 2016. 
+35.	"Spring 2017 report to the Computer Conservation Society" (http://blog.plan28.org/2017/05/s pring-2017-report-to-computer.html). blog.plan28.org. Retrieved 13 June 2017. 
+36.	"The Babbage Papers" (https://collection.sciencemuseumgroup.org.uk/documents/aa11000 0003/the-babbage-papers). Science Museum Group. 1821–1905. 
+37.	Bromley 2000. 
+38.	Babbage 1864, p. 137. 
+39.	"The Babbage Engine – Key People – Henry Provost Babbage" (https://web.archive.org/we b/20110220215219/http://www.computerhistory.org/babbage/henrybabbage/). Computer History Museum. Archived from the original (http://www.computerhistory.org/babbage/henryb abbage/) on 20 February 2011. Retrieved 8 February 2011. 
+40. Horsburg, E. M. (Ellice Martin); Napier Tercentenary Exhibition (1914). "Automatic Calculating Machines by P. E. Ludgate" (https://archive.org/stream/moderninstrument00hors uoft#page/127/mode/1up/search/1906). Modern instruments and methods of calculation : a handbook of the Napier Tercentenary Exhibition. Gerstein – University of Toronto. London : G. Bell. pp. 124–127. 
+41.	Ludgate, Percy E. (April 1909). "On a proposed analytical machine". Scientific Proceedings of the Royal Dublin Society. 12 (9): 77–91. Available on-line at: Fano.co.UK (http://www.fan o.co.uk/ludgate/paper.html) 
+42.	"The John Gabriel Byrne Computer Science Collection" (https://web.archive.org/web/20190 416071721/https://www.scss.tcd.ie/SCSSTreasuresCatalog/miscellany/TCD-SCSS-X.2012 1208.002/TCD-SCSS-X.20121208.002.pdf) (PDF). Archived from the original (https://scss.tc d.ie/SCSSTreasuresCatalog/miscellany/TCD-SCSS-X.20121208.002/TCD-SCSS-X.20121 208.002.pdf/) on 16 April 2019. Retrieved 8 August 2019. 
+43.	"Percy Ludgate's Analytical Machine" (http://www.fano.co.uk/ludgate/). fano.co.uk. From Analytical Engine to Electronic Digital Computer: The Contributions of Ludgate, Torres, and Bush by Brian Randell, 1982, Ludgate: pp. 4–5, Quevedo: pp. 6, 11–13, Bush: pp. 13, 16– 17. Retrieved 29 October 2018. 
+44.	Cohen 2000. 
+45.	"J. Presper Eckert Interview 28 October 1977" (https://web.archive.org/web/2010072408410 5/http://special.lib.umn.edu/cbi/oh/pdf.phtml?id=245). Archived from the original (http://specia l.lib.umn.edu/cbi/oh/pdf.phtml?id%3D245) on 24 July 2010. Retrieved 9 February 2011. 
+46.	"Computer Oral History Collection, 1969–1973, 1977" (https://web.archive.org/web/2010111 1055745/http://invention.smithsonian.org//downloads/fa_cohc_tr_mauc730223.pdf) (PDF). Archived from the original (http://invention.smithsonian.org/downloads/fa_cohc_tr_mauc730 223.pdf) (PDF) on 11 November 2010. Retrieved 9 February 2011. 
+47.	Menabrea & Lovelace 1843, p. 688. 
+48.	"The Mark I Computer" (https://web.archive.org/web/20150710053417/http://chsi.harvard.ed u/markone/function.html). Collection of Historical Scientific Instruments. Harvard University. Archived from the original (http://chsi.harvard.edu/markone/function.html) on 10 July 2015. Retrieved 7 May 2016. 
+49.	"Konrad Zuse—the first relay computer" (http://history-computer.com/ModernComputer/Rela ys/Zuse.html). History of Computers. Retrieved 7 May 2016. 
+50.	"The Manchester Small Scale Experimental Machine – "The Baby" " (http://curation.cs.manc hester.ac.uk/computer50/www.computer50.org/mark1/new.baby.html). Department of Computer Science, University of Manchester. April 1999. Retrieved 7 May 2016. 
+51.	Nimersheim, Jack (1995). "Moriarty by Modem" (http://www.cheznims.com/moriarty.htm). cheznims.com. Retrieved 7 May 2016. 
+52. "Dangerous experiments in comics" (http://2dgoggles.com/). 2D Goggles. Retrieved 1 August 2012. 
+53. "Experiments in Comics with Sydney Padua" (http://www.tor.com/index.php?option=com_co ntent&view=blog&id=58111). Tor.com. 26 October 2009. Retrieved 1 August 2012. 
+                                               
+54. "The Client | 2D Goggles" (http://sydneypadua.com/2dgoggles/category/the-client/). Sydneypadua.com. Retrieved 1 August 2012. 
+55. "Machina Babbagenseii" (http://www.orionsarm.com/eg-article/47f1ab093f416). Orion's Arm. 2014. Retrieved 7 May 2016. 
+Bibliography 
+Babbage, Charles (1864). "Chapter VIII – Of the Analytical Engine" (http://www.fourmilab.ch/ babbage/lpae.html). Passages from the Life of a Philosopher. London: Longman, Green, Longman, Roberts, & Green. pp. 112–141. 
+Babbage, Charles (1889). Babbage, Henry P. (ed.). Babbage's Calculating Engines – Being a Collection of Papers Relating to Them; Their History, and Construction (https://web.archiv e.org/web/20160304104606/http://monoskop.org/images/4/40/Babbage_Charles_Calculatin g_Engines.pdf) (PDF). New York: Cambridge University Press. ISBN 978-1-108-00096-3. Archived from the original (http://monoskop.org/images/4/40/Babbage_Charles_Calculating _Engines.pdf) (PDF) on 4 March 2016. Retrieved 24 December 2015. 
+Bromley, Allan G. (July–September 1982). "Charles Babbage's Analytical Engine, 1838" (htt p://athena.union.edu/~hemmendd/Courses/cs80/an-engine.pdf) (PDF). IEEE Annals of the History of Computing. 4 (3): 197–217. doi:10.1109/mahc.1982.10028 (https://doi.org/10.110 9%2Fmahc.1982.10028). 
+Bromley, Allan G. (1990). "Difference and Analytical Engines". In Aspray, William (ed.). Computing Before Computers (http://ed-thelen.org/comp-hist/CBC-Ch-02.pdf) (PDF). Ames: Iowa State University Press. pp. 59–98. ISBN 978-0-8138-0047-9. 
+Bromley, Allan G. (October–December 2000). "Babbage's Analytical Engine Plans 28 and 28a-The Programmer's Interface". IEEE Annals of the History of Computing. 22 (4): 5–19. doi:10.1109/85.887986 (https://doi.org/10.1109%2F85.887986). S2CID 17597243 (https://ap i.semanticscholar.org/CorpusID:17597243). 
+Cohen, I. Bernard (2000). "8 - Aiken's Background in Computing and Knowledge of Babbage's Machines". Howard Aiken: Portrait of a Computer Pioneer. Cambridge: MIT Press. pp. 61–72. ISBN 9780262531795. 
+Collier, Bruce (1970). The Little Engines That Could've: The Calculating Machines of Charles Babbage (http://robroy.dyndns.info/collier) (PhD). Harvard University. Retrieved 18 December 2015. 
+Green, Christopher D. (2005). "Was Babbage's Analytical Engine intended to be a mechanical model of the mind?" (http://www.yorku.ca/christo/papers/babbage-HoP.pdf) (PDF). History of Psychology. 8 (1): 35–45. doi:10.1037/1093-4510.8.1.35 (https://doi.org/10. 1037%2F1093-4510.8.1.35). PMID 16021763 (https://pubmed.ncbi.nlm.nih.gov/16021763). Retrieved 25 December 2015. 
+Hyman, Anthony (1982). Charles Babbage: A Biography (https://archive.org/details/charlesb abbagepi0000hyma). Oxford: Oxford University Press. ISBN 9780198581703. 
+Menabrea, Luigi Federico; Lovelace, Ada (1843). "Sketch of the Analytical Engine invented by Charles Babbage... with notes by the translator. Translated by Ada Lovelace" (http://www. fourmilab.ch/babbage/sketch.html). In Richard Taylor (ed.). Scientific Memoirs. 3. London: Richard and John E. Taylor. pp. 666–731. 
+Randell, Brian (October–December 1982). "From Analytical Engine to Electronic Digital Computer: The Contributions of Ludgate, Torres, and Bush" (http://www.cs.ncl.ac.uk/researc h/pubs/articles/papers/398.pdf) (PDF). IEEE Annals of the History of Computing. 4 (4): 327– 341. doi:10.1109/mahc.1982.10042 (https://doi.org/10.1109%2Fmahc.1982.10042). 
+S2CID 1737953 (https://api.semanticscholar.org/CorpusID:1737953). 
+Rojas, Raul (January–March 2021). "The Computer Programs of Charles Babbage". IEEE Annals of the History of Computing. 43 (1): 6–18. doi:10.1109/MAHC.2020.3045717 (https:// doi.org/10.1109%2FMAHC.2020.3045717). 
+Wilkes, Maurice Vincent (1971). "Babbage as a Computer Pioneer". Proc. Babbage Memorial Meeting. London: British Computer Society. pp. 415–440. 
+External links 
+The Babbage Papers (https://collection.sciencemuseumgroup.org.uk/documents/aa1100000 03/the-babbage-papers), Science Museum archive 
+The Analytical Engine at Fourmilab, includes historical documents and online simulations (h ttp://www.fourmilab.ch/babbage/contents.html) 
+"Image of the "General Plan of Babbage's great calculating engine" (1840), plus a modern description of operational & programming features" (https://web.archive.org/web/200808211 91451/http://cse.stanford.edu/classes/sophomore-college/projects-98/babbage/ana-mech.ht m). Archived from the original (http://cse.stanford.edu/classes/sophomore-college/projects-9 8/babbage/ana-mech.htm) on 21 August 2008. 
+Image of a later Plan of Analytical Engine with grid layout (1858) (http://www.projects.ex.ac.u k/babbage/engines.html) 
+First working Babbage "barrel" actually assembled, circa 2005 (http://www.meccano.us/anal ytical_engine/index.html) 
+Special issue, IEEE Annals of the History of Computing, Volume 22, Number 4, October– December 2000 (http://csdl2.computer.org/persagen/DLAbsToc.jsp?resourcePath=/dl/mags/ an/&toc=comp/mags/an/2000/04/a4toc.xml) (subscription required) 
+Babbage, Science Museum, London (https://web.archive.org/web/20080511205136/http://w ww.sciencemuseum.org.uk/onlinestuff/stories/babbage.aspx) 
+"The Marvellous Analytical Engine- How It Works" (http://sydneypadua.com/2dgoggles/the- marvellous-analytical-engine-how-it-works/). 2D Goggles. 31 May 2015. Retrieved
+23 August 2017. 
+
