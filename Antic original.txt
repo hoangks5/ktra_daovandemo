@@ -1,0 +1,160 @@
+Alphanumeric Television Interface Controller[1] (ANTIC) is an LSI ASIC dedicated to generating 2D computer graphics to be shown on a television screen or computer display. Under the direction of Jay Miner, the chip was designed in 1977-1978 by Joe Decuir, Francois Michel, and Steve Smith[2] for the Atari 8-bit family of home computers first released in 1979 and was patented by Atari, Inc. in 1981.[3] ANTIC is also used in the Atari 5200 video game system released in 1982, which shares most of the same hardware as the 8-bit computers. 
+ANTIC is responsible for the generation of playfield graphics which is delivered as a
+datastream to the related CTIA/GTIA chip. The CTIA/GTIA provides the coloring of the
+playfield graphics, and is responsible for adding overlaid sprites referred to as "Player/Missile graphics" by Atari. 
+Atari advertised it as a true microprocessor, in that it has an instruction set to run programs (called display lists) to process data. ANTIC has no capacity for writing back computed values to memory, 
+Features 
+The list below describes ANTIC's inherent hardware capabilities meaning the intended functionality of the hardware by itself, not including results achieved by CPU-serviced interrupts or display kernels frequently driving register changes. 
+ANTIC uses DMA to read a program called the "Display List" controlling these Playfield features: 
+14 different Playfield graphics modes 6 character modes 
+4 types of font/glyph rendering 8 map modes 
+Output a variable number of blank scan lines 
+Playfield Text and Map modes can be mixed onscreen 
+Variable screen height up to vertical overscan 
+Horizontal and Vertical coarse scrolling 
+Identify sections of the display subject to Horizontal and/or Vertical Fine scrolling 
+Trigger a CPU-serviced interrupt routine, called the "Display List Interrupt", at specific scan lines (also called "raster interrupt" or "Horizontal Blank Interrupt" on other systems) 
+Trigger a CPU-serviced interrupt routine, called the "Vertical Blank Interrupt", at the end of the display frame. 
+Other Register-based functions: 
+Variable screen width up to horizontal overscan
+Define the distance of movement for Horizontal and Vertical Fine scrolling Provides real-time information of the electron beam's vertical screen location. Reads a light pen horizontal/vertical coordinates (CRT only)
+Soft, re-definable character set.
+Adjustable display of inverse video characters. 
+Characters may be vertically reflected. 
+Control the display-oriented Vertical Blank and Display List interrupts, and the Reset key interrupt. 
+Performs DMA for CTIA/GTIA to produce Player/Missile graphics (aka sprites) 
+Non-fixed RAM. This allows RAM for graphics features to be located almost anywhere in the 16-bit memory address range. This applies to: 
+Display lists.
+Playfield Graphics data Character set fonts Player/Missile Graphics data 
+Versions 
+by part number 
+C012296 — NTSC: Used in Atari 400, 800, and 1200XL computers.[4] C014887 — PAL/SECAM: Used in Atari 400 and 800 computers. C021697 — NTSC: Used in Atari 600XL, 800XL, and XE models. C021698 — PAL/SECAM: Used in Atari XL, and XE models. 
+Atari, Inc. intended to combine functions of the ANTIC and GTIA chips in one integrated circuit to reduce production costs of Atari computers and 5200 consoles. Two such prototype circuits were being developed, but neither entered production. 
+ 
+C020577— CGIA[5] C021737 — KERI[5][6][7] 
+ANTIC provides 15 Read/Write registers controlling Playfield display parameters, DMA for Player/Missile graphics, fine scrolling, light pen input, and interrupts. Hardware registers do not return the written values back when read. This problem is solved by Operating System Shadow registers implemented in regular RAM as places to store the last value written to registers. Operating System Shadow registers are copied from RAM to the hardware registers during the vertical blank. Therefore, any writes to hardware registers which have corresponding shadow registers will be overwritten by the value of the Shadow registers during the next vertical blank. 
+Some Write hardware registers do not have corresponding Shadow registers. They can be safely written by an application without the value being overwritten during the vertical blank. If the application needs to know the last state of the register then it is the responsibility of the application to remember what it wrote. 
+Operating System Shadow registers also exist for some Read registers where reading the value directly from hardware at an unknown stage in the display cycle may return inconsistent results. 
+ANTIC's Player/Missile DMA feature reads bytes from memory and delivering data to update CTIA/GTIA's GRAFP0, GRAFP1, GRAFP2, GRAFP3, and GRAFM graphics pattern registers relieving the CPU from creating Player/Missile (sprite) graphics. These bits turn on ANTIC's transmission of Player data and Missile data to CTIA/GTIA. CTIA/GTIA must also be configured to receive the data via its GRACTL register in order for Player/Missile DMA to function as expected. 
+When Player DMA is enabled, Missile DMA automatically occurs to keep the DMA timing consistent, but the data is not delivered to the Missile's GRAFM register. 
+When enabled, Player/Missile DMA occurs on every scan line in the visible display—from scan line 8 to 247. Therefore, the Player/Missile data in the memory map (see ANTIC's PMBASE) above and below those scan line counts is unused and undisplayed. 
+Player/Missile Resolution bit values: 
+$00 - Double line resolution. ANTIC updates its DMA fetch address every other scan line and updates the CTIA/GTIA Player/Missile Graphics pattern registers every scan line, so that each Player/Missile byte pattern is two scan lines tall. When Double line resolution is enabled CTIA/GTIA register VDELAY ($D01Chex/53276dec) works by masking updates on even scan lines which results in shifting the bit pattern of individual Players and Missiles down one scan line. 
+$10 - Single line resolution. A DMA fetch and Player/Missile register update occurs on every scan line. CTIA/GTIA register VDELAY ($D01Chex/53276dec) which masks updates on even scan lines effectively reduces Single line resolution to Double line resolution. 
+ANTIC DMA and Player/Missile pattern register updates occur on each scan line regardless of resolution. When Double line resolution is in effect the Player/Missile memory can be modified between the redundant DMA fetches thus changing the pattern sent to the GRAF* registers and producing apparent Single line resolution Player/Missiles. 
+Display List DMA bit values: $00 - Disable Display List. 
+$20 - Enable Display list. 
+Playfield display requires that Display List DMA is enabled, and a Playfield width specified. If either value is zero, then no Playfield display is generated. 
+
+CHACTL $D401 Write 
+SHADOW: CHART $02F3 Character Control 
+The CHACTL Video Inverse and Video Blank bits affect the display of characters in ANTIC Text Modes 2 and 3 which have the high bit set (characters $80 through $FF). Toggling the values of the CHACTL bits allow blinking or blanking these characters globally for the entire display. 
+Video Inverse and Video Blank enabled together result in reverse video characters displayed as an inverse blank space. Video Inverse and Video Blank bits work in ANTIC modes 2 and 3, and have no effect on the other text modes 4, 5, 6, and 7. 
+The Video Reflect bit affects all Text Modes. Video Reflect is useful for situations requiring mirroring effects without defining a new character set. An ideal use is card games displaying accurate card faces showing upside down suits. As this vertically mirrors the glyph data before it is used, the effect appears inconsistent for ANTIC Mode 3 descenders with glyph bytes 6 and 7 appearing at the bottom of the descender area. 
+DLISTL/DLISTH $D402/$D403 Write 
+SHADOW: SDLSTL/SDLSTH $0230/$0231 Display List Pointer 
+Bit15 Bit14 Bit13 Bit12 Bit11 Bit10 Bit9 Bit8 Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????????????? 
+ANTIC begins executing the Display List pointed to by the 16-bit address in registers DLISTL/DLISTH ($D402-$D403hex/54274- 54275dec). The address registers are updated during Display List execution by ANTIC's JMP (Jump) and JVB (Jump and wait for Vertical Blank). The address is also updated by the Operating System's Vertical Blank Interrupt (VBI) routine using the values in shadow registers SDLSTL/SDLSTH ($0230-$0231hex/560-561dec). 
+When the OS Vertical Blank Interrupt is enabled, direct updates to the ANTIC DLIST registers by the CPU or the ANTIC Jump instructions will be overwritten by the OS during the next Vertical Blank by the values in the shadow registers. Therefore, page flipping implemented by Display Lists that point to the next Display List in series will not operate as expected unless the Vertical Blank interrupt is disabled. 
+HSCROL $D404 Write 
+Horizontal Fine Scroll 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+----???? 
+This register specifies the distance of the Horizontal fine scrolling shift in color clocks. Only the lowest 4 bits are significant. The value range of 16 color clocks allows ANTIC to shift Mode 2 Text four characters, and Mode 6 text two characters before a coarse scroll is needed. 
+When Horizontal scrolling is enabled for a mode line ANTIC fetches the next size increment greater than the current screen width to provide the buffer of data subject to the horizontal scrolling control. When displaying Narrow width ANTIC fetches the screen RAM needed for Normal width. Likewise, for Normal width ANTIC fetches the screen RAM needed for Wide. 
+ANTIC buffers the first few bytes read from screen memory that are sufficient to cover the 16 color clock range of movement. (Two to four bytes depending on display mode.) The HSCROL value specifies how many color clocks should be output from the buffered data beginning from the last (right most) color clock of the last buffered byte and progressing to the left. When HSCROL is 0 no color clocks are output from the buffer, so the first screen byte displayed is the first byte after the buffered data. As HSCROL increases more color clocks from the end (right side) of the buffered data are added to the left edge of the display causing the fine scroll shift to move the screen contents to the right. 
+ANTIC Mode F (high-resolution, 1/2 color clock pixels) can only be scrolled two pixels at a time, because HSCROL specifies color clocks. 
+ANTIC Modes using the alternate GTIA color interpretations must be scrolled by an entire GTIA pixel (two color clocks). Only even values should be used to ensure correct scrolling. Odd values of HSCROL will shift the pixel stream into a different state that GTIA will interpret as different colors. 
+Unlike many platforms Atari's horizontal scrolling is visually consistent and free from color "strobing" artifacts due to Atari's pixel size matching the color clock timing needed for accurate color. 
+VSCROL $D405 Write 
+Vertical Fine Scroll 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+----???? 
+This register specifies the distance of the Vertical fine scrolling in scan lines. The lowest 4 bits are significant, however the Vertical scroll value should range from 0 to the ANTIC Mode line's scan line height - 1. Scrolling farther than the ANTIC Mode's number of scan lines results in lines of repeated data upsetting the fine scrolling continuity (though, this can also be used as an exploitable behavior). 
+The Vertical scrolling region is defined by setting the VS bit ($20) on a sequential series of ANTIC Mode Lines in the Display List. The first Mode line without the VS bit set becomes the end of the scrolling region and is used as a buffer line to supply the new information to scroll up into the bottom of the scrolling region. 
+The Vertical scroll value indicates the scan line number to begin the display in the first Mode line and is also used as the scan line number to end the display in the last Mode line (the line without the VS bit set). 
+Example: Given an eight scan line ANTIC Mode (Text Modes 2, 4, or 6) with the VS bit set on two adjacent Mode lines the scrolling region then consists of three Mode lines—the third line in the scrolling region is the first Mode line encountered without the VS bit set. When Vertical scrolling is not set in the Display List the three Modes lines would naturally result in 24 displayed scan lines. When the VS bits are set in the Display List Mode instructions as described and the VSCROL value is set to 2 then the first Mode line in the region begins displaying at scan line 2 showing scan lines 2 to 7 (six scan lines or 8 - VSCROL), the second Mode line is displayed completely (eight scan lines), and the final Mode line ends at scan line 2 showing scan lines 0 to 2 (three scan lines or VSCROL + 1). The total scan lines displayed in the scrolling region is then 6 + 8 + 3 = 17 scan lines. 
+Since fine scrolling is based on scan lines not pixel height, and scrolling region movement is done simply by skipping scan lines from the first Mode line and adding scan lines to the last Mode line, it is possible to use different graphics Modes within the scrolling region. This merely requires additional care when determining how many scan lines can be shifted for the current first and last Mode lines in the scrolling region. 
+Blank Mode lines cannot be contained within a scrolling region, because Blank Mode line instructions inherently do not have a Vertical Scroll Modifier bit. (Blank Mode line instructions specify the blank line count using the bits 7 through 5 that function as LMS, HS, and VS Modifiers for "regular" Playfield Mode instructions.) However, a Blank Mode instruction can be used to end a scrolling region and is still subject to the expected scan line height changes per the vertical scroll value. 
+PMBASE $D407 Write 
+Player Missile Base Address 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????? 
+This specifies the page of the base address for Player/Missile graphics. When double line resolution P/M graphics are operating the PMBASE value must begin on a 1K boundary. When single line resolution P/M graphics are operating the PMBASE value must begin on a 2K boundary. 
+CHBASE $D409 Write 
+   
+SHADOW: CHBAS $02F4 
+Character Base Address 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????? 
+This specifies the page of the base address for the character set. ANTIC Modes 2, 3, 4, and 5 use 128 characters in the character set and require the CHBASE value begin on a 1K boundary. ANTIC Modes 6 and 7 use 64 characters, so the CHBASE value must begin on a 512 byte boundary. 
+The usual default value is $E0hex/224dec for the character set in ROM at $E000hex/57344dec. 
+WSYNC $D40A Write 
+Wait For Horizontal Sync 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????? 
+This register allows programs to synchronize to the display. A write to this register halts the 6502 program through the end of the current scanline. This behavior is commonly used during Display List Interrupts to produce clean transitions/changes from one scanline to the next. The value written is unimportant. 
+VCOUNT $D40B Read 
+Vertical Line Counter 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????? 
+This register tracks the scan line currently being generated. The value returned is the actual scan line divided by 2. Blank lines generated at the start of the display are included. The value for NTSC will range from 0 to 130 for NTSC, and 0 to 155 for PAL. This value is useful during Display List Interrupts to identify the vertical screen position. 
+PENH $D40C Read 
+SHADOW: LPENH $0234 Light Pen Horizontal Position 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????? 
+This contains the horizontal color clock position when the light pen/light gun trigger is pressed. The shadow register is the recommended source for reading this information, since it will be updated during the vertical blank guaranteeing consistent and reliable results. Programs should avoid reading the hardware register directly unless the program is certain the register is read at a time insuring the value is valid. Light guns for the Atari function the same way as light pens with the addition of an optical magnifier allowing the screen to be read from a greater distance. The light pen/light gun input device requires a conventional CRT using a scanning electron beam. The light pen/light gun cannot work with modern LCD TVs and monitors. 
+PENV $D40D Read 
+SHADOW: LPENV $0235 Light Pen Vertical Position 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????? 
+This contains the VCOUNT value captured when the light pen/light gun trigger is pressed. The shadow register is the recommended source for reading this information, since it will be updated during the vertical blank guaranteeing consistent and reliable results. Programs should avoid reading the hardware register directly unless the program is certain the register is read at a time insuring the value is valid. Light guns for the Atari function the same way as light pens with the addition of an optical magnifier allowing the screen to be read from a greater distance. The light pen/light gun input device requires a conventional CRT using a scanning electron beam. The light pen/light gun cannot work with modern LCD TVs and monitors. 
+NMIEN $D40E Write 
+Non-Maskable Interrupt (NMI) Enable 
+Bit 7 Bit 6 Bit 5 Bit 4 Bit 3 Bit 2 Bit 1 Bit 0 
+DLI VBI RESET - - - - - 
+NMIEN enables Non-Maskable Interrupts. The bit values: 
+      
+Feature Bits Value 
+Reset $20 
+VBI $40 
+DLI $80 
+Description 
+Enable Reset key interrupt 
+Enable Vertical Blank Interrupt 
+Enable Display List Interrupt 
+      
+The Operation System sets NMIEN to the default $40hex/64dec during the power up routines. The NMI service routines first vector through $FFFAhex/65530dec which determines the cause and then transfers control to the interrupt service routine. 
+DLI: 
+If NMIEN's DLI bit is set when ANTIC encounters a Display List instruction with the DLI modifier bit set, then ANTIC triggers the DLI on the last scan line of that Display List instruction mode line. 
+The Operating System does not use DLIs, so the default address for the DLI vector (VDSLST, $0200hex/512dec) points to an RTI instruction in ROM. The application using DLIs must alter VDSLST to point to the desired DLI routine before enabling the DLI. 
+The 6502 Accumulator, X and Y register contents are not preserved before entry to the DLI routine. It is the responsibility of the DLI routine to save the state of the registers that will be used during the DLI routine, and then the last action is to restore the original values of the registers before exiting with an RTI instruction. Routines typically push the register values to the 6502 stack. 
+If multiple DLIs are used the first interrupt updates VDSLST to point to the address of the next interrupt, and so on for subsequent interrupts. The last Display List Interrupt routine on the screen points VDSLST back to the address of the first Display List Interrupt. Alternatively, a Vertical Blank Interrupt routine can be used to reset the VDSLST address to guarantee the DLIs remain in sync with the screen. 
+VBI: 
+When NMIEN's VBI bit is set, ANTIC will signals a Vertical Blank Interrupt at the end of processing the JVB (Jump vertical blank) at the end of the Display List. The Operating System uses the Vertical Blank to perform various housekeeping chores (among other things - updating timers, copying controller input values to their Shadow registers, and copying the contents of Shadow registers to the custom chips hardware registers.) 
+The OS jumps through VVBLKI ($0222hex/546dec) to begin the OS VBI Service Routine, and the OS VBI Routine exits with a jump through VVBLKD ($0224hex/548dec). By default VVBLKI points to the OS jump vector SYSVBV ($E45Fhex/58463dec) to begin the Vertical Blank Interrupt, and VVBLKD points to the OS jump vector XITVBV ($E462hex/58466dec). 
+User programs can insert execution of custom code either before (Immediate) or after (Deferred) the Operating System's Vertical Blank Interrupt routines. Since the OS Vertical Blank interrupt could be called while a user program is updating the vectors, the Operating system provides a routine, SETVBV ($E45Chex/58460dec), that will safely update the VVBLKI or VVBLKD vectors to point to a new routine: 
+To set a new jump target for VVBLKI (Immediate) set the Y register to the low byte of the target address, the X register to the high byte of the target address, and the Accumulator to 6, then JSR SETVBV. The user code called through VVBLKI simply needs to exit by jumping to the OS Vertical Blank with a JMP SYSVBV ($E45Fhex/58463dec). 
+To set a new jump target for VVBLKD (Deferred) set the Y register to the low byte of the target address, the X register to the high byte of the target address, and the Accumulator to 7, then JSR SETVBV.. The user code called through VVBLKD must exit by jumping to the OS Vertical Blank exit routine with a JMP XITVBV ($E462hex/58466dec). 
+When the CRITIC flag ($42hex/66dec) is non-zero execution of the Deferred Vertical Blank interrupt is suppressed regardless of the addresses in the vectors. The default value of CRITIC, 0, allows execution of both Immediate and Deferred Vertical Blank Interrupts. 
+NMIRES $D40F Write 
+Non-Maskable Interrupt (NMI) Reset 
+Bit7 Bit6 Bit5 Bit4 Bit3 Bit2 Bit1 Bit0 
+???????? 
+Any value written to NMIRES resets the bits in NMIST which indicate the reason for the most recent Non-Maskable Interrupt. This is used by interrupt dispatch code in the Operating System and there would ordinarily not be a reason for a user program to write here. 
+NMIST $D40F Read 
+Non-Maskable Interrupt (NMI) Status 
+Bit 7 Bit 6 Bit 5 Bit 4 Bit 3 Bit 2 Bit 1 Bit 0 
+DLI VBI RESET - - - - - 
+The Operating System's Non-Maskable Interrupt dispatch routine reads this register to determine the reason for the interrupt and so which service routine to execute. 
+The bit values: 
+$20 - Reset key interrupt $40 - Vertical Blank Interrupt $80 - Display List Interrupt 
+The Display List 
+The Display List is the list of instructions, or the program, directing ANTIC how to generate the display. The data processed by this Display List "program" is the screen memory. The output is the graphics display. The kinds of graphics in the output (text vs addressable pixels) is determined by the instructions in the Display List. 
+The Display List and the display data are written into RAM by the CPU. ANTIC reads the Display List instructions, screen memory, and character set information from RAM using a technique known as direct memory access (DMA). A BASIC or 6502 machine language program's job is to initialize the display—set up the Display List instructions, organize screen memory (and character set if applicable), and then direct ANTIC to start the display. After this, ANTIC automatically takes care of generating the screen display. This allows the Atari 8-bit computers to produce complex, mixed-mode displays without direct CPU intervention. Other platforms, even those designed much later, cannot either mix graphics modes in one display, or do so without complex CPU interrupts. 
+ANTIC processes the instructions in the Display List, reads the screen memory (and character set data if applicable), translates this information into a real-time stream of graphics data, and sends this data stream to the CTIA/GTIA chip which applies the color to the graphics pixels and outputs the video. Together the two chips provide 6 text and 8 graphics modes (14 total). The more advanced version, GTIA, adds three alternative color interpretations for each ANTIC graphics mode providing a total of 56 (14 times four) graphics modes. However, only the ANTIC graphics modes based on half-color clock pixels are capable of expressing the complete color palette provided by the new color interpretations, and of those modes the ones convenient for use are ANTIC modes 2 (OS Graphics mode 0 text) and ANTIC mode F (OS Graphics mode 8). Thus the reasonable number of unique graphics modes available using the inherent hardware capabilities of ANTIC + CTIA/GTIA is 20–14 ANTIC modes + 3 additional color interpretations each for ANTIC modes 2 and F. 
+Display List Instruction Overview 
+The Atari display is built as a series of ANTIC  instructions each describing a line of text or graphics mode progressively from the top to the bottom of the screen until the desired display area is filled. In effect, the screen is a vertical stack of ANTIC mode instructions. Different modes occupy different numbers of scan lines and use different amounts of RAM. 
+
+
