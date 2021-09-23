@@ -1,0 +1,69 @@
+ARINC 818 
+ARINC 818: Avionics Digital Video Bus (ADVB) is a video interface and protocol standard developed for high bandwidth, low-latency, uncompressed digital video transmission in avionics systems. The standard, which was released in January 2007, has been advanced by ARINC and the aerospace community to meet the stringent needs of high performance digital video. The specification was updated and ARINC 818-2 was released in December 2013, adding a number of new features, including link rates up to 32X fibre channel rates, channel-bonding, switching, field sequential color, bi-directional control and data-only links. 
+ARINC 818-3 was released in 2018. This revision clarified the 8B/10B encoding rates versus the 64B/66B encoding rates, along with clarifying several issues. 
+Although simplired, ADVB retains attributes of Fibre Channel that are beneficial for mission-critical applications: High Speed / High Reliability / Low Latency / Flexibility / High-Performance / Uncompressed Digital Video Transmission 
+BENEFITS OF ARINC 818 (ADVB) 
+Low Overhead
+Real-time transmission of video signals at high data rates (high bandwidth) Low-latency
+Uncompressed Digital Video transmission
+Flexibility - not tied to any one physical layer or video format
+Opportunity to standardize high-speed video systems
+High reliability - 2 layers of error checking available
+Networking capable
+Multiple video streams on a single link
+Multiple timing classes defined
+Suitable for mission-critical applications (up to DAL A) 
+Background 
+In aircraft, an ever-increasing amount of information is supplied in the form of images, this information passes through a complex video system before reaching cockpit displays. Video systems include: infrared and other wavelength sensors, optical cameras, radar, flight recorders, map/chart systems, synthetic vision, image fusion systems, heads-up displays (HUD) and heads-down primary flight and multifunction displays, video concentrators, and other subsystems. Video systems are used for taxi and take-off assist, cargo loading, navigation, target tracking, collision avoidance, and other critical functions. 
+ARINC 818 (ADVB) is a Fibre Channel (FC) protocol that builds on FC-AV (Fibre Channel Audio Video, defined in ANSI INCITS 356-2002), which was used extensively on video systems in the F-18 and the C-130AMP. Although FC-AV has been used on numerous programs, each implementation has been unique. ARINC 818 provides an opportunity to standardize high-speed video systems and has since been adopted by a number of high-profile commercial and military aerospace programs, including the A400M, A350XWB, B787, KC-46A, C-130, KF-X, Comac C919, and numerous other programs. ARINC 818 is also common in avionics suites, such as Proline Fusion by Rockwell Collins, and the TopDeck by Thales. 
+Overview of ARINC 818 protocol 
+ARINC 818 (Avionics Digital Video Bus) is a point-to-point, 8B/10B encoded (or 64B/66B for higher speeds) serial protocol for transmission of video, audio, and data. The protocol is packetized but is video- centric and very flexible, supporting an array of complex video functions including the multiplexing of multiple video streams on a single link or the transmission of a single stream over a dual link. Four different synchronization classes of video are defined, from simple asynchronous to stringent pixel synchronous systems. 
+ARINC 818 (ADVB) is unidirectional, and does not require handshaking. ARINC 818 (ADVB) has 15 defined speeds -- from 1Gbps to 28Gbps. 
+Each ADVB project requires an Interface Control Document (ICD). Shared among all project members, the ICD ensures interoperability, reduces the implementation magnitude, and defines: 
+Video format(s) for the project Embedded data (Ancillary Data) Video and line timing
+Pixel format 
+Synchronization class 
+ADVB Packet Structure 
+The ARINC 818 (ADVB) frame is the basic transport mechanism for ARINC 818. It is important to refer to these packets as “ADVB frames” rather than simply “frames” to eliminate potential confusion with video frames. 
+The start of an ADVB frame is signaled by a SOFx 4-byte ordered set and terminated with an EOFx ordered set. Every ADVB frame has a standard Fibre Channel header composed of six 32-bit words. These header words pertain to such things as the ADVB frame origin and intended destination and the ADVB frames position within the sequence. The Source ID field (SID) in the ADVB frame header allows video from each sensor to be distinguished from the other sensors. 
+The “payload” contains either video, video parameters or ancillary data. The payload can vary in size, but is limited to 2112 bytes per ADVB frame. To insure data integrity, all ADVB frames have a 32-bit CRC calculated for data between the SOFx and the CRC word. The CRC is the same 32-bit polynomial calculation defined for Fibre Channel. 
+ADVB container structure 
+The ARINC 818 (ADVB) specification defines a “container” as a set of ADVB frames used to transport video. In other words, a video image and data is encapsulated into a “container” that spans many ADVB frames. The “payload” of each ADVB frame contains either data or video. Within a container, ARINC 818 defines objects that contain certain types of data. That is, certain ADVB frames within the container are part of an object. 
+An example of how ARINC 818 transmits color XGA provides a good overview. XGA RGB requires ~141M bytes/s of data transfer (1024 pixels x 3 bytes per pixel x 768 lines x 60 Hz). Adding the protocol overhead and blanking time, a standard link rate of 2.125Gbit/s is required. ARINC 818 “packetizes” video images into Fibre Channel frames. Each FC frame begins with a 4 byte ordered set, called an SOF (Start of Frame), and ends with an EOF (End of Frame), additionally, a 4 byte CRC is included for data integrity. The payload of the first ADVB frame in a sequence contains container header data that accompanies each video image. 
+Each XGA video line requires 3072 bytes, which exceeds the maximum FC payload length, so each line is divided into two ADVB frames. Transporting an XGA image requires a “payload” of 1536 FC frames. Additionally, an ADVB header frame is added, making a total of 1537 FC frames. Idle characters are required between FC frames because they are used for synchronization between transmitters and receivers. 
+Applications 
+Although ARINC 818 was developed specifically for avionics applications, the protocol is already being used in sensor fusion applications where multiple sensor outputs are multiplexed onto a single high-speed link. Features added in ARINC 818-2 facilitate using ARINC 818 as a sensor interface. 
+The ARINC 818 specification does not mandate which physical layer is to be used and implementations are done using both copper and fiber. Although the majority of implementation use fiber, low-speed implementations of ARINC 818 (1.0625Gbp to 6.375Gbps) sometimes use copper (twinax or TSP or coax). The most commonly, either 850 nm MM fiber (<500m) or 1310 nm SM fiber (up to 10 km) is used. ARINC 818 lends itself to applications that require few conductors (slip rings, turrets), low weight (aerospace), EMI resistance, or long distance transmission (aerospace, ships). 
+Flexibility vs. Interoperability 
+ARINC 818 is flexible and can accommodate many types of video and data applications. It is the intention of the standard that all implementation be accompanied by a small interface control document (ICD) that defines key parameters of the header such as: link speed, video resolution, color scheme, size of ancillary 
+data, pixel format, timing classification, or bit-packing schemes. Interoperability is only guaranteed among equipment built to the same ICD. 
+Implementation considerations 
+ARINC 818 uses a FC physical layer that can be constructed from any FC compatible 8B/10B SerDes, which are common in large FPGAs. 
+ARINC 818 transmitters must assemble valid FC frames, including starting and ending ordered sets, headers, and CRC. This can easily be done with VHDL state machines, and many PLD SerDes include built in CRC calculations. 
+The flexibility of ARINC 818 allows for receiver implementations using either full image buffers or just display-line buffers. For either, synchronization issues must be considered at the pixel, line, and frame level. 
+Line buffer or FIFO-based receivers will require that the transmitter adhere to strict line timing requirements of the display. Since the display horizontal scanning must be precise, the arrival time of lines will also need to be precise. ARINC 818 intends that timing parameters such as these be captured in an ICD specific to the video system. 
+The authors of ARINC 818 built upon many years of combined experience of using FC to transport different video formats, and key implementation details are included in the specification, including examples of common analog formats. 
+ARINC 818-2 updates 
+ARINC 818-2, ratified in December 2013, adds features to accommodate higher link rates, support for compression and encryption, networking, and sophisticated display schemes, such as channel bonding used on large area displays (LADs). 
+Link rates: At the time the original ARINC 818 specification was ratified, the fiber-channel protocol supported link rates up to 8.5 gigabits per second (Gb/s). ARINC 818-2 added rates of 5.0, 6.375 (FC 6x), 12.75 (FC 12x), 14.025 (FC 16x), 21.0375 (FC 24x), and 28.05 (FC 32x) Gb/s. The 6x, 12x, and 24x speeds were added to accommodate the use of high-speed, bi-directional coax with power as a physical medium. The specification also provides for non-standard link rates for bi-directional return path for applications such as camera control where high speed video links are not required. 
+Compression and Encryption: ARINC 818 was originally envisioned as carrying only uncompressed video and audio. Applications such as high-resolution sensors, UAV/UAS with bandwidth limited downlinks, and data only applications drove the need to compress and/or encrypt a link. Sticking to a philosophy of maximum flexibility, the ARINC 818-2 calls for the ICD to specify implementation details for compression and encryption. The ARINC 818 protocol does not provide a means for compression and encryption, it simply provides flags to indicate that payload is compressed or encrypted. 
+Switching: ARINC 818 was designed as a point-to-point protocol. Since many of the newer implementations of the ARINC 818 have multiple displays and or many channels of ARINC 818 (10 or more), switching has become more important. The new specification requires that active switching can only occur between frames. In effect, to prevent broken video frames, the switch must wait until the vertical blanking. Again, the ICD controls the implementation details. 
+Field Sequential Color: A video format code was added to support field sequential color. The color field- sequential mode will typically send each color component in a separate container. 
+Channel Bonding: To overcome link bandwidth limitations of FPGAs, ARINC 818-2 supports multiple links in parallel. The video frame is broken into smaller segments and transmitted on two or more links. Each link must transmit a complete ADVB frame with header, and the ICD addresses latency and skew between the links. 
+Data-only Links: ARINC 818-2 provides for data-only links, typically used in command-and-control channels, such as those needed for bi-directional camera interfaces. These may employ a standard link rate or a non-standard rate specified by the ICD. 
+Regions of Interest: The ARINC 818-2 protocol provides a means for defining partial images, tiling, and region-of-interest that are important for high-speed sensors and stereo displays. 
+ARINC 818-3 Updates 
+Defines display emulation mode for test equipment 
+Adds new material describing a latency budget for ARINC 818 devices used in transmit and receive modes 
+10Gbps as the highest 8B/10B encoded bus speed 
+Adds 64B/66B encoding for speeds of 12Gbps and higher 
+Supports 28.05 Gbps (FC32X) bus speeds using 256B/257B or 64B/66B encoding 
+Overall this revision will allow for technologies such as 4K and 8K displays, windowless cockpits, VR and high-bandwidth sensors & cameras around the aircraft 
+See also 
+Aircraft flight control system Fibre Channel 8B/10B encoding Fibre Channel network protocols Integrated Modular Avionics 
+References 
+818-1 Avionics Digital Video Bus (ADVB) High Data Rate, published by ARINC 2007 
+ARINC 818 Becomes New Protocol Standard for High-Performance Video Systems, COTS Journal, Dec 2006 
+Explaining ARINC 818, Avionics Magazine March 1, 2008 
+Paul Grunwald, “What’s New in ARINC 818-2,” 32nd Digital Avionics Systems Conference, Syracuse, New York, October 6–10, 2013. 
+
