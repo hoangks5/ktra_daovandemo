@@ -1,0 +1,159 @@
+ 
+Asymmetric digital subscriber line 
+Asymmetric digital subscriber line (ADSL) is a type of digital subscriber line (DSL) technology, a data communications technology that enables faster data transmission over copper telephone lines than a conventional voiceband modem can provide. ADSL differs from the less common symmetric digital subscriber line (SDSL). In ADSL, bandwidth and bit rate are said to be asymmetric, meaning greater toward the customer premises (downstream) than the reverse (upstream). Providers usually market ADSL as an Internet access service primarily for downloading content from the Internet, but not for serving content accessed by others. 
+ 
+
+Contents 
+Overview 
+ADSL works by using spectrum above the band used by voice telephone calls.[1] With a DSL filter, often called splitter, the frequency bands are isolated, permitting a single telephone line to be used for both ADSL service and telephone calls at the same time. ADSL is generally only installed for short distances from the telephone exchange (the last mile), typically less than 4 kilometres (2 mi),[2] but has been known to exceed 8 kilometres (5 mi) if the originally laid wire gauge allows for further distribution. 
+At the telephone exchange, the line generally terminates at a digital subscriber line access multiplexer (DSLAM) where another frequency splitter separates the voice band signal for the conventional phone network. Data carried by the ADSL are typically routed over the telephone company's data network and eventually reach a conventional Internet Protocol network. 
+There are both technical and marketing reasons why ADSL is in many places the most common type offered to home users. On the technical side, there is likely to be more crosstalk from other circuits at the DSLAM end (where the wires from many local loops are close to each other) than at the customer premises. Thus the upload signal is weakest at the noisiest part of the local loop, while the download signal 
+ 
+is strongest at the noisiest part of the local loop. It therefore makes technical sense to have the DSLAM transmit at a higher bit rate than does the modem on the customer end. Since the typical home user in fact does prefer a higher download speed, the telephone companies chose to make a virtue out of necessity, hence ADSL. 
+The marketing reasons for an asymmetric connection are that, firstly, most users of internet traffic will require less data to be uploaded than downloaded. For example, in normal web browsing, a user will visit a number of web sites and will need to download the data that comprises the web pages from the site, images, text, sound files etc. but they will only upload a small amount of data, as the only uploaded data is that used for the purpose of verifying the receipt of the downloaded data (in very common TCP connections) or any data inputted by the user into forms etc. This provides a justification for internet service providers to offer a more expensive service aimed at commercial users who host websites, and who therefore need a service which allows for as much data to be uploaded as downloaded. File sharing applications are an obvious exception to this situation. Secondly internet service providers, seeking to avoid overloading of their backbone connections, have traditionally tried to limit uses such as file sharing which generate a lot of uploads. 
+Operation 
+Currently, most ADSL communication is full-duplex. Full-duplex ADSL communication is usually achieved on a wire pair by either frequency-division duplex (FDD), echo-cancelling duplex (ECD), or time-division duplex (TDD). FDD uses two separate frequency bands, referred to as the upstream and downstream bands. The upstream band is used for communication from the end user to the telephone central office. The downstream band is used for communicating from the central office to the end user. 
+With commonly deployed ADSL over POTS (Annex A), the band
+from 26.075 kHz to 137.825 kHz is used for upstream
+communication, while 138–1104 kHz is used for downstream
+communication. Under the usual DMT scheme, each of these is
+further divided into smaller frequency channels of 4.3125 kHz.
+These frequency channels are sometimes termed bins. During
+initial training to optimize transmission quality and speed, the
+ADSL modem tests each of the bins to determine the signal-to-
+noise ratio at each bin's frequency. Distance from the telephone
+exchange, cable characteristics, interference from AM radio
+stations, and local interference and electrical noise at the modem's
+location can adversely affect the signal-to-noise ratio at particular
+frequencies. Bins for frequencies exhibiting a reduced signal-to-
+noise ratio will be used at a lower throughput rate or not at all; this
+reduces the maximum link capacity but allows the modem to
+maintain an adequate connection. The DSL modem will make a
+plan on how to exploit each of the bins, sometimes termed "bits
+per bin" allocation. Those bins that have a good signal-to-noise
+ratio (SNR) will be chosen to transmit signals chosen from a
+greater number of possible encoded values (this range of
+possibilities equating to more bits of data sent) in each main clock cycle. The number of possibilities must not be so large that the receiver might incorrectly decode which one was intended in the presence of noise. Noisy bins may only be required to carry as few as two bits, a choice from only one of four possible patterns, or only one bit per bin in the case of ADSL2+, and very noisy bins are not used at all. If the 
+ 
+Frequency plan for ADSL Annex A. Red area is the frequency range used by normal voice telephony (PSTN), the green (upstream) and blue (downstream) areas are used for ADSL. 
+pattern of noise versus frequencies heard in the bins changes, the DSL modem can alter the bits-per-bin allocations, in a process called "bitswap", where bins that have become more noisy are only required to carry fewer bits and other channels will be chosen to be given a higher burden. 
+The data transfer capacity the DSL modem therefore reports is determined by the total of the bits-per-bin allocations of all the bins combined. Higher signal-to-noise ratios and more bins being in use gives a higher total link capacity, while lower signal-to-noise ratios or fewer bins being used gives a low link capacity. The total maximum capacity derived from summing the bits-per-bin is reported by DSL modems and is sometimes termed sync rate. This will always be rather misleading: the true maximum link capacity for user data transfer rate will be significantly lower because extra data are transmitted that are termed protocol overhead, reduced figures for PPPoA connections of around 84–87 percent, at most, being common. In addition, some ISPs will have traffic policies that limit maximum transfer rates further in the networks beyond the exchange, and traffic congestion on the Internet, heavy loading on servers and slowness or inefficiency in customers' computers may all contribute to reductions below the maximum attainable. When a wireless access point is used, low or unstable wireless signal quality can also cause reduction or fluctuation of actual speed. 
+In fixed-rate mode, the sync rate is predefined by the operator and the DSL modem chooses a bits-per-bin allocation that yields an approximately equal error rate in each bin.[3] In variable-rate mode, the bits-per-bin are chosen to maximize the sync rate, subject to a tolerable error risk.[3] These choices can either be conservative, where the modem chooses to allocate fewer bits per bin than it possibly could, a choice which makes for a slower connection, or less conservative in which more bits per bin are chosen in which case there is a greater risk case of error should future signal-to-noise ratios deteriorate to the point where the bits- per-bin allocations chosen are too high to cope with the greater noise present. This conservatism, involving a choice of using fewer bits per bin as a safeguard against future noise increases, is reported as the signal- to-noise ratio margin or SNR margin. 
+The telephone exchange can indicate a suggested SNR margin to the customer's DSL modem when it initially connects, and the modem may make its bits-per-bin allocation plan accordingly. A high SNR margin will mean a reduced maximum throughput, but greater reliability and stability of the connection. A low SNR margin will mean high speeds, provided the noise level does not increase too much; otherwise, the connection will have to be dropped and renegotiated (resynced). ADSL2+ can better accommodate such circumstances, offering a feature termed seamless rate adaptation (SRA), which can accommodate changes in total link capacity with less disruption to communications. 
+Vendors may support usage of higher frequencies as a proprietary extension to the standard. However, this requires matching vendor- supplied equipment on both ends of the line, and will likely result in crosstalk problems that affect other lines in the same bundle. 
+There is a direct relationship between the number of channels available and the throughput capacity of the ADSL connection. The exact data capacity per channel depends on the modulation method used. 
+ADSL initially existed in two versions (similar to VDSL), namely
+CAP and DMT. CAP was the de facto standard for ADSL
+deployments up until 1996, deployed in 90 percent of ADSL installations at the time. However, DMT was chosen for the first ITU-T ADSL standards, G.992.1 and G.992.2 (also called G.dmt and G.lite respectively). Therefore, all modern installations of ADSL are based on the DMT modulation scheme. 
+Frequency spectrum of modem on ADSL line 
+Interleaving and fastpath 
+ISPs (but users rarely, apart from Australia where it's the default[4]) have the option to use interleaving of packets to counter the effects of burst noise on the telephone line. An interleaved line has a depth, usually 8 to 64, which describes how many Reed–Solomon codewords are accumulated before they are sent. As they can all be sent together, their forward error correction codes can be made more resilient. Interleaving adds latency as all the packets have to first be gathered (or replaced by empty packets) and they, of course, all take time to transmit. 8 frame interleaving adds 5 ms round-trip-time, while 64 deep interleaving adds 25 ms. Other possible depths are 16 and 32. 
+"Fastpath" connections have an interleaving depth of 1, that is one packet is sent at a time. This has a low latency, usually around 10 ms (interleaving adds to it, this is not greater than interleaved) but it is extremely prone to errors, as any burst of noise can take out the entire packet and so require it all to be retransmitted. Such a burst on a large interleaved packet only blanks part of the packet, it can be recovered from error correction information in the rest of the packet. A "fastpath" connection will result in extremely high latency on a poor line, as each packet will take many retries. 
+Installation problems 
+ADSL deployment on an existing plain old telephone service (POTS) telephone line presents some problems because the DSL is within a frequency band that might interact unfavorably with existing equipment connected to the line. It is therefore necessary to install appropriate frequency filters at the customer's premises to avoid interference between the DSL, voice services, and any other connections to the line (for example intruder alarms). This is desirable for the voice service and essential for a reliable ADSL connection. 
+In the early days of DSL, installation required a technician to visit the premises. A splitter or microfilter was installed near the demarcation point, from which a dedicated data line was installed. This way, the DSL signal is separated as close as possible to the central office and is not attenuated inside the customer's premises. However, this procedure was costly, and also caused problems with customers complaining about having to wait for the technician to perform the installation. So, many DSL providers started offering a "self-install" option, in which the provider provided equipment and instructions to the customer. Instead of separating the DSL signal at the demarcation point, the DSL signal is filtered at each telephone outlet by use of a low-pass filter for voice and a high-pass filter for data, usually enclosed in what is known as a microfilter. This microfilter can be plugged by an end user into any telephone jack: it does not require any rewiring at the customer's premises. 
+Commonly, microfilters are only low-pass filters, so beyond them only low frequencies (voice signals) can pass. In the data section, a microfilter is not used because digital devices that are intended to extract data from the DSL signal will, themselves, filter out low frequencies. Voice telephone devices will pick up the entire spectrum so high frequencies, including the ADSL signal, will be "heard" as noise in telephone terminals, and will affect and often degrade the service in fax, dataphones and modems. From the point of view of DSL devices, any acceptance of their signal by POTS devices mean that there is a degradation of the DSL signal to the devices, and this is the central reason why these filters are required. 
+A side effect of the move to the self-install model is that the DSL signal can be degraded, especially if more than 5 voiceband (that is, POTS telephone-like) devices are connected to the line. Once a line has had DSL enabled, the DSL signal is present on all telephone wiring in the building, causing attenuation and echo. A way to circumvent this is to go back to the original model, and install one filter upstream from all telephone jacks in the building, except for the jack to which the DSL modem will be connected. Since this requires wiring changes by the customer, and may not work on some household telephone wiring, it is rarely done. It is usually much easier to install filters at each telephone jack that is in use. 
+DSL signals may be degraded by older telephone lines, surge protectors, poorly designed microfilters, repetitive electrical impulse noise, and by long telephone extension cords. Telephone extension cords are typically made with small-gauge, multi-strand copper conductors which do not maintain a noise-reducing pair twist. Such cable is more susceptible to electromagnetic interference and has more attenuation than solid twisted-pair copper wires typically wired to telephone jacks. These effects are especially significant where the customer's phone line is more than 4 km from the DSLAM in the telephone exchange, which causes the signal levels to be lower relative to any local noise and attenuation. This will have the effect of reducing speeds or causing connection failures. 
+Transport protocols 
+ADSL defines three "Transmission protocol-specific transmission convergence (TPS-TC)" layers:[5] 
+Synchronous Transport Module (STM), which allows the transmission of frames of the Synchronous Digital Hierarchy (SDH) 
+Asynchronous Transfer Mode (ATM)
+Packet Transfer Mode (starting with ADSL2, see below) 
+In home installation, the prevalent transport protocol is ATM. On top of ATM, there are multiple possibilities of additional layers of protocols (two of them are abbreviated in a simplified manner as "PPPoA" or "PPPoE"), with the all-important TCP/IP at layers 4 and 3 respectively of the OSI model providing the connection to the Internet. 
+ADSL standards 
+
+Frequency plan for common ADSL standards and annexes. 
+POTS/ISDN
+Guard band
+Upstream
+Downstream ADSL, ADSL2, ADSL2+ Downstream ADSL2+ only 
+Legend 
+Version 
+Standard name 
+Common name 
+ADSL 
+ADSL Lite (G.lite) 
+ADSL (G.dmt) 
+ADSL over POTS 
+ADSL over ISDN 
+RE-ADSL2 
+ADSL2 
+ADSL2 
+Splitterless ADSL2 
+ADSL2+ 
+ADSL2+M 
+Downstream rate 
+8.0 Mbit/s 
+1.5 Mbit/s 
+8.0 Mbit/s 
+12.0 Mbit/s 
+12.0 Mbit/s 
+5.0 Mbit/s 
+12.0 Mbit/s 
+12.0 Mbit/s 
+1.5 Mbit/s 
+24.0 Mbit/s 
+24.0 Mbit/s 
+Upstream rate 
+1.0 Mbit/s 
+0.5 Mbit/s 
+1.3 Mbit/s 
+1.3 Mbit/s 
+1.8 Mbit/s 
+0.8 Mbit/s 
+1.3 Mbit/s 
+3.5 Mbit/s 
+0.5 Mbit/s 
+1.4 Mbit/s 
+3.3 Mbit/s 
+Approved in 
+1998 
+1999-07 
+1999-07 
+2001 
+2005 
+2002-07 
+2002-07 
+2002-07 
+2002-07 
+2003-05 
+2008 
+ADSL 
+ADSL2 
+ANSI T1.413-1998 Issue 2 
+ITU G.992.2 
+ITU G.992.1 
+ITU G.992.1 
+ITU G.992.1 
+ITU G.992.3 
+ITU G.992.3 
+ITU G.992.3 
+ITU G.992.4 
+ITU G.992.5 
+ITU G.992.5 
+See also 
+Annex A 
+Annex B 
+Annex L 
+Annex J 
+Annex M 
+ADSL2+ 
+ 
+ADSL loop extender can be used to expand the reach and rate of ADSL services. Attenuation distortion
+Broadband Internet access
+Digital subscriber line access multiplexer 
+Flat rate
+List of device bandwidths
+Low-pass filter and ADSL splitter.
+Rate-Adaptive Digital Subscriber Line (RADSL) Single-pair high-speed digital subscriber line (SHDSL) Symmetric Digital Subscriber Line (SDSL) 
+References 
+1. ANSI T1.413-1998 "Network and Customer Installation Interfaces – Asymmetric Digital Subscriber Line (ADSL) Metallic Interface." (American National Standards Institute 1998) 
+2. Data and Computer Communications, William Stallings, ISBN 0-13-243310-9, ISBN 978-0- 13-243310-5 
+3. Troiani, Fabio (1999). "Thesis in Electronics Engineering (DU) on ADSL system with DMT modulation in respect of the Standard ANSI T1.413" (http://web.tiscali.it/fabiotroiani/index_fil e/How_ADSL_work2.html). DSL Knowledge Center. Retrieved 2014-03-06. 
+4.	"How to optimise your gaming performance" (https://crowdsupport.telstra.com.au/t5/Home-Br oadband-KB/How-to-optimise-your-gaming-performance/ta-p/54568). 
+5.	"Recommendation ITU-T G.992.3 - Asymmetric digital subscriber line transceivers 2 (ADSL2)" (http://www.itu.int/rec/T-REC-G.992.3-200904-I). SERIES G: TRANSMISSION SYSTEMS AND MEDIA, DIGITAL SYSTEMS AND NETWORKS Digital sections and digital line system – Access networks. Telecommunication standardization sector of ITU. April 2009. Retrieved 11 April 2012. 
+External links 
+Media related to ADSL at Wikimedia Commons
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Asymmetric_digital_subscriber_line&oldid=1022381784" 
+
