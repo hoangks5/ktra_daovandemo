@@ -1,0 +1,414 @@
+Computer programming
+Computer programs is the procedure of developing and building an executable computer program to
+accomplish a certain computing outcome or to execute a details job. Programs entails jobs such as:
+analysis, creating algorithms, profiling formulas' precision and also resource usage, and also the
+2]
+The resource code of a program is written in one or more languages that are unmistakable to developers,
+instead of machine code, which is directly carried out by the central processing unit. The objective of
+shows is to discover a sequence of guidelines that will certainly automate the efficiency of a task (which can
+be as complex as an operating system) on a computer system, commonly for solving a given problem. Efficient
+programming hence often calls for expertise in several various subjects, consisting of understanding of the
+application domain name, specialized algorithms, as well as formal logic.
+Tasks coming with and related to setting consist of: screening, debugging, resource code maintenance,
+execution of construct systems, as well as monitoring of obtained artefacts, such as the machine code of
+computer system programs. These might be considered part of the programs process, yet usually the term
+software application development is made use of for this bigger procedure with the term programs, execution, or coding
+booked for the real writing of code. Software application engineering combines design techniques with
+software program advancement methods. Reverse engineering is a relevant process utilized by designers, experts and also
+designers to understand and re-create/re-implement. [3] History
+Machine language
+Compiler languages
+Resource code access
+Modern programs
+Quality requirements
+Readability of resource code
+Mathematical intricacy
+Chess formulas as an instance
+Methodologies
+Measuring language use
+Debugging
+Programming languages
+Developers
+See likewise
+References
+Sources
+Further reading
+Outside links
+Components
+Ada Lovelace, whose notes contributed to
+the end of Luigi Menabrea's paper
+consisted of the very first formula made
+for processing by an Analytical
+Engine. She is commonly acknowledged as
+history's very first computer system developer.
+Information and also directions were as soon as
+stored on exterior punched cards,
+which were kept in order as well as
+set up in program decks.
+Programmable tools have actually existed for centuries. As early as the
+9th century, a programmable music sequencer was designed by the
+Persian Banu Musa brothers, who described an automated
+1206, the Arab designer Al-Jazari invented a programmable drum
+machine where a music mechanical automaton could be made to
+play various rhythms and also drum patterns, by means of pegs as well as cams. [6] [7]
+In 1801, the Jacquard loom could create entirely various
+weaves by altering the "program"-- a collection of pasteboard cards
+with holes typed them.
+Code-breaking algorithms have likewise existed for centuries. In the
+9th century, the Arab mathematician Al-Kindi described a.
+cryptographic formula for deciphering encrypted code, in A.
+Manuscript on Deciphering Cryptographic Messages. He provided the.
+first summary of cryptanalysis by regularity analysis, the earliest.
+code-breaking formula. [8] The first computer system program is generally dated to 1843, when.
+mathematician Ada Lovelace published an algorithm to calculate a.
+sequence of Bernoulli numbers, intended to be executed by.
+Charles Babbage's Analytical Engine. [9] In the 1880s Herman Hollerith invented the principle of storing.
+Later on a control panel (plug.
+board) included in his 1906 Type I Tabulator permitted it to be.
+set for various jobs, and also by the late 1940s, unit record.
+tools such as the IBM 602 as well as IBM 604, were configured.
+by control panels in a comparable means, as were the initial digital.
+computer systems. With the idea of the stored-program.
+computer system presented in 1949, both programs and data were saved.
+and also adjusted similarly in computer memory. [11] Machine code was the language of very early programs, written in the.
+guideline set of the particular equipment, typically in binary notation.
+Setting up languages were quickly developed that let the developer.
+define instruction in a message layout, (e.g., ADD X, OVERALL), with.
+acronyms for every operation code and significant names for.
+defining addresses. Nevertheless, because a setting up language is.
+bit greater than a different symbols for a machine language, any type of.
+2 makers with various guideline collections additionally have various assembly languages.
+Background.
+Machine language.
+Compiler languages.
+Wired control panel for an IBM 402.
+Accountancy Equipment.
+Top-level languages made the process of establishing a program.
+easier and a lot more understandable, and much less bound to the underlying.
+hardware. FORTRAN, the first extensively utilized high-level language to.
+have an useful application, appeared in 1957 [12] as well as many.
+other languages were soon created-- particularly, COBOL.
+aimed at industrial information handling, as well as Lisp for computer.
+research.
+These put together languages allow the designer to write.
+programs in terms that are syntactically richer, and also a lot more with the ability of.
+abstracting the code, making it easy to target for varying equipment.
+direction sets by means of compilation affirmations as well as heuristics. The.
+initially compiler for a programming language was created by.
+Poise Receptacle. When Receptacle went to function on UNIVAC in.
+1949, she brought the concept of making use of compilers with her. Compilers harness the power of computer systems.
+to make programs less complicated [12] by enabling programmers to specify computations by entering a formula.
+using infix notation (e.g., Y = X * 2 + 5 * X + 9) for example. FORTRAN, the first widely used top-level.
+language to have a functional execution which allowed the abstraction of reusable blocks of code,.
+came out in 1957 [12] as well as many various other languages were quickly created-- in particular, COBOL aimed at.
+business data processing, and also Lisp for computer system study. In 1951 Frances E. Holberton developed the.
+Sort-merge generator, which ran on the UNIVAC I. [ 16] One more woman working at UNIVAC, Adele.
+Mildred Koss, established a program that was a forerunner to report generators. The suggestion for the creation.
+She welcomed six people, including Elegance.
+Hopper. Receptacle was involved in creating COBOL as a business language as well as producing "selfdocumenting".
+Hopper's payment to COBOL was based on her shows.
+language, called FLOW-MATIC. [15] In 1961, Jean E. Sammet developed FORMAC as well as likewise released.
+Programming Languages: Background and Principles, which went on to be a basic work with.
+20]
+Programs were mainly still gotten in utilizing punched cards or paper tape. By the late 1960s, data storage space.
+devices and also computer terminals became cost-effective enough that programs could be created by keying.
+straight into the computer systems. Frances Holberton created a code to enable keyboard inputs while she operated at.
+UNIVAC. [21] Text editors were developed that enabled adjustments as well as corrections to be made far more easily than with.
+punched cards. Sis Mary Kenneth Keller worked with creating the shows language BASIC.
+while she was a graduate student at Dartmouth in the 1960s. [22] Among the very first object-oriented.
+shows languages, Smalltalk, was established by 7 developers, consisting of Adele Goldberg, in.
+the 1970s. [23] Whatever the approach to development may be, the last program needs to please some essential.
+buildings. The adhering to properties are among the most vital: [24] [25]
+Source code access.
+Modern programming.
+Quality needs.
+Integrity: just how commonly the results of a program are proper. This relies on theoretical.
+correctness of formulas, and minimization of programs mistakes, such as errors in.
+source monitoring (e.g., buffer overflows and also race conditions) and reasoning errors (such as.
+department by absolutely no or off-by-one mistakes).
+Effectiveness: just how well a program prepares for problems due to errors (not insects). This.
+includes scenarios such as incorrect, improper or corrupt data, absence of needed.
+sources such as memory, operating system solutions, and network connections, user mistake,.
+as well as unanticipated power interruptions.
+Functionality: the functional designs of a program: the ease with which a person can use the program.
+for its desired purpose or in many cases also unforeseen functions. Such problems can.
+make or damage its success also no matter various other issues. This involves a wide variety of.
+textual, graphical, and also occasionally hardware aspects that enhance the clarity, intuitiveness,.
+cohesiveness and also completeness of a program's interface.
+Portability: the range of hardware and operating system platforms on which the.
+source code of a program can be compiled/interpreted as well as run. This depends upon distinctions.
+in the programs centers offered by the various platforms, consisting of hardware as well as.
+running system sources, expected behavior of the equipment as well as operating system, and.
+accessibility of platform-specific compilers (and also often libraries) for the language of the.
+resource code.
+Maintainability: the ease with which a program can be modified by its existing or future.
+designers in order to make improvements or to personalize, repair pests and protection holes, or.
+adjust it to new settings. Excellent practices [26] throughout preliminary development make the. difference in this regard. This high quality might not be directly apparent to the end customer but it can.
+substantially affect the destiny of a program over the long-term.
+Efficiency/performance: Procedure of system resources a program takes in (processor time,.
+memory area, sluggish gadgets such as disks, network data transfer and also to some extent even.
+user communication): the much less, the better. This additionally consists of careful administration of sources,.
+for example tidying up temporary data and eliminating memory leaks. This is usually.
+talked about under the shadow of a selected programming language. The language.
+Affects performance, even slower languages, such as Python, can perform.
+programs immediately from a human viewpoint. Speed, source use, and also performance are.
+essential for programs that bottleneck the system, but efficient use programmer time is.
+likewise crucial as well as is associated with set you back: even more equipment may be less costly.
+In computer programs, readability describes the ease with which a human reader can comprehend the.
+purpose, control flow, and also operation of source code. It affects the elements of top quality over, consisting of.
+mobility, use and most notably maintainability.
+Readability is essential since programmers invest most of their time analysis, trying to understand.
+as well as modifying existing resource code, instead of composing new resource code. Unreadable code typically results in.
+pests, inefficiencies, and duplicated code. A research [27] located that a couple of straightforward readability transformations. made code much shorter and also drastically reduced the moment to comprehend it.
+Following a constant programming style usually assists readability. Readability is more than just.
+shows design. Many elements, having little or absolutely nothing to do with the ability of the computer to.
+efficiently assemble and also execute the code, contribute to readability. [28] Some of these factors consist of:.
+Different indent styles (whitespace).
+Comments.
+Disintegration.
+Readability of source code.
+Naming conventions for objects (such as variables, courses, treatments, etc.).
+The presentation facets of this (such as indents, line breaks, shade highlighting, and more) are usually.
+handled by the source code editor, however the material aspects reflect the programmer's skill as well as skills.
+Various aesthetic programming languages have additionally been created with the intent to solve readability.
+problems by taking on non-traditional methods to code framework as well as display. Integrated advancement.
+atmospheres (I.D.Es) goal to integrate all such help. Strategies like Code refactoring can enhance.
+readability.
+The academic area as well as the design practice of computer system shows are both mostly concerned with.
+uncovering and also implementing the most reliable formulas for an offered class of issue. For this function,.
+algorithms are classified into orders using supposed Large O notation, which reveals source usage, such as.
+implementation time or memory consumption, in terms of the dimension of an input. Specialist designers recognize.
+with a selection of well-established formulas and also their respective intricacies and also utilize this expertise to.
+pick formulas that are best suited to the scenarios.
+" Setting a Computer for Playing Chess" was a 1950 paper that examined a "minimax" algorithm that.
+belongs to the history of algorithmic intricacy; a training course on IBM's Deep Blue (chess computer system) is part of.
+the computer technology educational program at Stanford College. [29] The primary step in a lot of official software program development processes is needs evaluation, followed by screening.
+to determine worth modeling, execution, and also failure elimination (debugging). There exist a lot of.
+varying approaches for every of those jobs. One technique preferred for requirements analysis is Use Case.
+analysis. Many programmers use types of Agile software application advancement where the different phases of formal.
+software application development are more integrated with each other into brief cycles that take a couple of weeks as opposed to years.
+There are numerous approaches to the Software advancement procedure.
+Popular modeling techniques include Object-Oriented Evaluation and Style (OOAD) and also Model-Driven.
+Style (MDA). The Unified Modeling Language (UML) is a notation utilized for both the OOAD and.
+MDA.
+A similar method used for database design is Entity-Relationship Modeling (Emergency Room Modeling).
+Implementation techniques include crucial languages (object-oriented or step-by-step), useful.
+languages, and reasoning languages.
+It is very difficult to establish what are one of the most preferred contemporary programming languages. Methods of.
+determining shows language appeal include: counting the variety of task advertisements that.
+discuss the language, [30] the number of publications offered as well as courses educating the language (this overstates.
+the relevance of newer languages), and quotes of the number of existing lines of code written in the.
+language (this underestimates the variety of customers of business languages such as COBOL).
+Algorithmic intricacy.
+Chess algorithms as an instance.
+Methods.
+Determining language usage.
+The first known actual insect causing a.
+issue in a computer system was a moth,.
+entraped inside a Harvard data processor,.
+videotaped in a log publication entry dated.
+September 9, 1947. [32] "Insect" was.
+currently a common term for a.
+software problem when this insect was.
+discovered.
+Some languages are popular for specific type of applications, while some languages are routinely.
+utilized to write many different type of applications. COBOL is still solid in business information.
+[ 31] commonly on large data processor computer systems, Fortran in design applications, scripting languages in.
+Web growth, as well as C in embedded software. Several applications utilize a mix of a number of languages in their.
+building and use. New languages are typically designed around the syntax of a previous language with.
+new functionality included, (as an example C++ adds object-orientation to C, and Java includes memory.
+monitoring and also bytecode to C++, yet consequently, sheds performance as well as the capability for low-level.
+manipulation).
+Debugging is a very important job in the software application advancement.
+procedure because having defects in a program can have significant.
+repercussions for its individuals. Some languages are extra prone to.
+some kinds of mistakes because their specification does not need.
+compilers to carry out as much checking as other languages. Use of.
+a fixed code evaluation device can assist identify some feasible troubles.
+Typically the initial step in debugging is to attempt to recreate the.
+trouble. This can be a non-trivial task, for instance as with.
+identical procedures or some uncommon software bugs. Also, certain.
+customer setting and usage history can make it difficult to.
+duplicate the problem.
+After the insect is recreated, the input of the program might need to.
+be streamlined to make it less complicated to debug. As an example, when an insect.
+in a compiler can make it crash when analyzing some large resource.
+documents, a simplification of the test case that causes only few lines.
+from the initial resource file can be adequate to duplicate the.
+very same collision. Trial-and-error/divide-and-conquer is required: the.
+developer will try to eliminate some parts of the original test case.
+as well as inspect if the trouble still exists. When debugging the trouble in a GUI, the designer can try to.
+miss some user interaction from the original issue description and also check if remaining activities are.
+enough for bugs to appear. Scripting as well as breakpointing is also part of this process.
+Debugging is usually done with IDEs. Standalone debuggers like GDB are likewise used, and these frequently.
+give much less of an aesthetic setting, usually making use of a command line. Some text editors such as Emacs enable.
+GDB to be invoked via them, to supply a visual environment.
+Different programs languages sustain different styles of shows (called programs.
+paradigms). The selection of language used is subject to lots of considerations, such as company policy,.
+viability to task, schedule of third-party bundles, or specific preference. Preferably, the programs.
+language best suited for the task handy will certainly be chosen. Trade-offs from this excellent include discovering sufficient.
+designers that recognize the language to build a team, the accessibility of compilers for that language, as well as.
+the effectiveness with which programs written in an offered language carry out. Languages develop an approximate.
+spectrum from "low-level" to "high-level"; "low-level" languages are generally much more machine-oriented as well as.
+faster to perform, whereas "high-level" languages are more abstract and also much easier to utilize but execute much less.
+swiftly. It is usually less complicated to code in "high-level" languages than in "low-level" ones.
+Allen Downey, in his book Just how To Assume Like A Computer Scientist, creates:.
+Debugging.
+Configuring languages.
+The information look various in different languages, however a couple of fundamental instructions show up in just.
+about every language:.
+Input: Collect information from the key-board, a data, or a few other tool.
+Output: Present data on the display or send out information to a data or various other device.
+Arithmetic: Perform fundamental arithmetical operations like enhancement and reproduction.
+Conditional Execution: Check for specific problems as well as execute the proper.
+sequence of statements.
+Rep: Do some action repeatedly, generally with some variant.
+Lots of machine language offer a mechanism to call functions given by shared collections. Supplied the.
+functions in a library comply with the ideal run-time conventions (e.g., method of passing debates), then.
+these functions may be written in any other language.
+Computer designers are those who create computer system software program. Their tasks typically involve:.
+Prototyping.
+Coding.
+Debugging.
+Paperwork.
+Assimilation.
+Upkeep.
+Demands analysis.
+Software application style.
+Software program testing.
+Spec.
+ACCU.
+Association for Computing Equipment.
+Computer system networking.
+Hi globe program.
+Establishment of Experts as well as Designers.
+National Coding Week.
+System shows.
+Computer programs in the punched.
+card era.
+The Art of Computer System Programming.
+Females in computer.
+Timeline of ladies in computing.
+1. Bebbington, Shaun (2014 ). "What is coding" (https://yearofcodes.tumblr.com/what-iscoding).
+Tumblr. Archived (https://web.archive.org/web/20200429195646/https://yearofcode.
+s.tumblr.com/what-is-coding) from the initial on April 29, 2020. Recovered March 3, 2014.
+2. Bebbington, Shaun (2014 ). "What is programs" (https://yearofcodes.tumblr.com/what-is-p.
+rogramming). Tumblr. Archived (https://web.archive.org/web/20200429195958/https://yearof.
+codes.tumblr.com/what-is-programming) from the initial on April 29, 2020. Obtained.
+March 3, 2014.
+3. Eliam, Eldad (2005 ). Reversing: Tricks of Reverse Engineering. Wiley. p. 3. ISBN 978-0-.
+7645-7481-8.
+Designers.
+See additionally.
+References.
+4. Koetsier, Teun (2001 ), "On the prehistory of programmable makers: musical automata,.
+looms, calculators", Device as well as Maker Theory, Elsevier, 36 (5 ): 589-- 603,.
+doi:10.1016/ S0094-114X( 01 )00005-2 (https://doi.org/10.1016%2FS0094-114X%2801%290.
+0005-2).
+5. Kapur, Ajay; Carnegie, Dale; Murphy, Jim; Long, Jason (2017 ). "Speakers Optional: A.
+background of non-loudspeaker-based electroacoustic music" (https://doi.org/10.1017%2FS1355.
+771817000103). Organised Audio. Cambridge University Press. 22 (2 ): 195-- 205.
+doi:10.1017/ S1355771817000103 (https://doi.org/10.1017%2FS1355771817000103).
+ISSN 1355-7718 (https://www.worldcat.org/issn/1355-7718).
+6. Fowler, Charles B. (October 1967). "The Gallery of Songs: A Background of Mechanical.
+Music Educators Journal. 54 (2 ): 45-- 49.
+0.2307% 2F3391092). JSTOR 3391092 (https://www.jstor.org/stable/3391092).
+S2CID 190524140 (https://api.semanticscholar.org/CorpusID:190524140).
+7. Noel Sharkey (2007 ), A 13th Century Programmable Robot (https://web.archive.org/web/200.
+70629182810/http:// www.shef.ac.uk/marcoms/eview/articles58/robot.html), College of.
+Sheffield.
+8. Dooley, John F. (2013 ). A Short Background of Cryptology as well as Cryptographic Algorithms. Springer.
+Scientific Research &amp; Organization Media. pp. 12-- 3. ISBN 9783319016283.
+9. Fuegi, J.; Francis, J. (2003 ). "Lovelace &amp; Babbage and also the Creation of the 1843 'notes' ".
+IEEE Annals of the History of Computer. 25 (4 ): 16. doi:10.1109/ MAHC.2003.1253887 (http.
+s:// doi.org/10.1109%2FMAHC.2003.1253887).
+10. da Cruz, Frank (March 10, 2020). "Columbia University Computing Background-- Herman.
+Hollerith" (http://www.columbia.edu/acis/history/hollerith.html). Columbia College.
+Columbia.edu. Archived (https://web.archive.org/web/20200429210742/http://www.columbi.
+a.edu/cu/computinghistory/hollerith.html) from the initial on April 29, 2020. Obtained.
+April 25, 2010.
+Computer Background Museum" (https://ww.
+w.computerhistory.org/timeline/memory-storage/). www.computerhistory.org. Obtained.
+June 3, 2021.
+12. Bergstein, Brian (March 20, 2007). "Fortran creator John Backus dies" (http://www.nbcnews.
+com/id/17704662). NBC Information. Archived (https://web.archive.org/web/20200429211030/htt.
+p:// www.nbcnews.com/id/17704662) from the original on April 29, 2020. Gotten April 25,.
+2010.
+13. Smith 2013, p. 6.
+14. Ceruzzi 1998, p. 84-85.
+15. Gürer 1995, p. 176.
+16. Gürer 1995, p. 177.
+17. Gürer 1995, p. 179.
+18. Smith 2013, p. 7.
+19. Ceruzzi 1998, p. 92.
+20. "Computer System Authority to Talk Here" (https://www.newspapers.com/clip/24510360/). The.
+Times. April 9, 1972. Retrieved October 13, 2018-- by means of Newspapers.com.
+21. "Frances Holberton, Leader in Computer Languages, Passes away" (https://www.newspapers.com/c.
+lip/24508073). The Courier-Journal. December 12, 2001. Obtained October 13, 2018-- by means of.
+Newspapers.com.
+22. Gürer 1995, p. 180-181.
+23. "Adele Goldberg" (https://www.cs.umd.edu/hcil/muiseum/goldberg/goldberg_page.htm).
+University of Maryland, University Park. Retrieved October 14, 2018.
+Ceruzzi, Paul E. (1998 ). History of Computing (https://archive.org/details/historyofmodernc00.
+ceru). Cambridge, Massachusetts: MIT Press. ISBN 9780262032551-- via EBSCOhost.
+Evans, Claire L. (2018 ). Broad Band: The Untold Tale of the Ladies Who Made the Web.
+( https://books.google.com/books?id=C8ouDwAAQBAJ&amp;q=9780735211759&amp;pg=PP1). New.
+York: Portfolio/Penguin. ISBN 9780735211759.
+Gürer, Denise (1995 ). "Introducing Ladies in Computer Science" (https://courses.cs.washin.
+gton.edu/courses/csep590/06au/readings/p175-gurer.pdf) (PDF). Communications of the.
+ACM. 38 (1 ): 45-- 54. doi:10.1145/ 204865.204875 (https://doi.org/10.1145%2F204865.20487.
+5). S2CID 6626310 (https://api.semanticscholar.org/CorpusID:6626310).
+Smith, Erika E. (2013 ). "Acknowledging a Cumulative Inheritance through the History of Females.
+in Computing" (http://search.ebscohost.com/login.aspx?direct=true&amp;db=lfh&amp;AN=90670848&amp;.
+website= ehost-live). CLCWeb: Relative Literary Works &amp; Culture: A WWWeb Journal. 15 (1 ): 1-- 9.
+-- using EBSCOhost.
+A.K. Hartmann, Practical Overview to Computer system Simulations (https://web.archive.org/web/20090.
+211113048/http:// worldscibooks.com/physics/6988.html), Singapore: World Scientific (2009 ).
+A. Quest, D. Thomas, and W. Cunningham, The Pragmatic Programmer. From Journeyman to.
+Master, Amsterdam: Addison-Wesley Longman (1999 ).
+24. "NIST To Create Cloud Roadmap" (https://www.informationweek.com/cloud/nist-to-develo.
+November 5, 2010. "Computing.
+effort seeks to get rid of barriers to shadow fostering in safety, interoperability, mobility.
+and also reliability.".
+25. April 9, 1984. "Is it based on ... Integrity.
+Portability. Compatibility".
+26. "Shows 101: Tips to come to be an excellent designer - Wisdom Nerd" (https://wisdomgee.
+k.com/programming/tips-become-good-programmer). Knowledge Nerd. May 19, 2016.
+Retrieved May 23, 2016.
+27. Elshoff, James L.; Marcotty, Michael (1982 ). "Improving computer program readability to help.
+modification". Communications of the ACM. 25 (8 ): 512-- 521. doi:10.1145/ 358589.358596 (h.
+ttps:// doi.org/10.1145%2F358589.358596). S2CID 30026641 (https://api.semanticscholar.or.
+g/CorpusID:30026641).
+"Readability" (http://docforge.com/wiki/Readability). Archived (http.
+s:// web.archive.org/web/20200429211203/http://www.docforge.com/wiki/Readability) from.
+the initial on April 29, 2020. Recovered January 30, 2010.
+29. "Deep Blue" (https://stanford.edu/~cpiech/cs221/apps/deepBlue.html).
+1950, Claude Shannon released ... "Programming a Computer for Playing Chess", ...
+" minimax" formula".
+30. Enticknap, Nicholas (September 11, 2007). "SSL/Computer Weekly IT salary study:.
+financing boom drives IT work growth" (http://www.computerweekly.com/Articles/2007/09/11/22.
+6631/sslcomputer-weekly-it- salary-survey-finance-boom-drives-it-job. htm).
+31. Mitchell, Robert (May 21, 2012). "The Cobol Departure" (http://www.computerworld.com/art.
+Computer system World. Obtained May 9,.
+2015.
+32. Photo politeness Naval Surface area Warfare Center, Dahlgren, Virginia, from National.
+Geographic Sept. 1947 (https://www.nationalgeographic.org/thisday/sep9/worlds-first-compu.
+ter-bug).
+Sources.
+Further reading.
+Brian W. Kernighan, The Technique of Programs, Pearson (1999 ).
+Weinberg, Gerald M., The Psychology of Computer Programming, New York: Van Nostrand.
+Reinhold (1971 ).
+Edsger W. Dijkstra, A Discipline of Programming, Prentice-Hall (1976 ).
+O.-J. Dahl, E.W.Dijkstra, C.A.R. Hoare, Structured Programs, Academic Press (1972 ).
+David Gries, The Science of Programming, Springer-Verlag (1981 ).
+Media pertaining to Computer system programming at Wikimedia Commons.
+Quotes related to Setting at Wikiquote.
+Software application design (https://curlie.org/Computers/Software/Software_Engineering/) at.
+Curlie.
+Fetched from "https://en.wikipedia.org/w/index.php?title=Computer_programming&amp;oldid=1042617382".
+This web page was last edited on 5 September 2021, at 22:30 (UTC).
+Text is offered under the Creative Commons Attribution-ShareAlike Certificate; added terms might apply. By using.
+this site, you accept the Terms of Usage and Personal Privacy Plan. Wikipedia ® is a registered hallmark of the Wikimedia.
+Structure, Inc., a charitable organization.
+Outside links.
