@@ -1,0 +1,301 @@
+Computer display standards are a combination of aspect ratio, display size, display resolution, color depth, and refresh rate. They are associated with specific 
+expansion cards, video connectors and monitors. 
+History 
+Various computer display standards or display modes have been used in the history of the personal computer. They are often a combination of aspect ratio (specified as width-to-height ratio), display resolution (specified as the width and height in pixels), color depth (measured in bits per pixel), and refresh rate (expressed in hertz). Associated with the screen resolution and refresh rate is a display adapter. Earlier display adapters were simple frame-buffers, but later display standards also specified a more extensive set of display functions and software controlled interface. 
+Beyond display modes, the VESA industry organization has defined several standards related to power management and device identification, while ergonomics standards are set by the TCO. 
+Standards 
+A number of common resolutions have been used with computers descended from the original IBM PC. Some of these
+are now supported by other families of personal computers. These are de facto standards, usually originated by one
+manufacturer and reverse-engineered by others, though the VESA group has co-ordinated the efforts of several leading
+video display adapter manufacturers. Video standards associated with IBM-PC-descended personal computers are shown
+in the diagram and table below, alongside those of early Macintosh and other makes for comparison. (From the early 1990s onwards, most manufacturers moved over to PC display standards thanks to widely available and affordable hardware). 
+Video standard 
+Full name 
+Description 
+Display resolution (pixels) 
+Width Height (px) (px) 
+160 120 
+160 128 
+160 144 
+Area (px) 
+Aspect ratio 
+Color depth (2^bpp colors) 
+            
+QQVGA 
+Quarter Quarter Video Graphics Array 
+Used on some portable devices, and is a common alternative resolution to QCIF for webcams and other online video streams in low-bandwidth situations, and on video modes of early and later low-end digital cameras. 
+160×120 (19k) 
+       
+UNNAMED 
+UNNAMED 
+A common size for LCDs manufactured for small consumer electronics, basic mobile phones and feature phones, typically in a 1.7" to 1.9" diagonal size. This LCD is often used in portrait (128×160) orientation. The unusual 5:4 aspect ratio makes the display slightly different from QQVGA dimensions. 
+160×128 (20k) 
+       
+UNNAMED 
+UNNAMED 
+A shared size for older portable video game systems. The nearly- square (but landscape) aspect ratio and coarse pixel resolution gave these games a characteristic visual style. Colour depth ranged from 4 colours 
+(2 bpp) with the original Game Boy, through 16–32 colours (4–5 bpp) with the Atari Lynx and Game Gear, to a maximum of 56 colours (equivalent of 
+6 bpp) from a wider palette with the Game Boy Color. Also appears as a YouTube resolution option ("144p"). 
+160×144 (23k) 
+10:9 
+2 bpp (6 bpp effective) 
+          
+HQVGA 
+Half Quarter Video Graphics Array 
+Used with some smaller, cheaper portable devices, including lower-end cellphones and PDAs, and perhaps most commonly in the Nintendo Game Boy Advance (with, in that guise, 32k colours (15 bpp) on-screen). 
+240×160 (38k) 
+240 160 
+320 240 
+38,400 
+3:2 
+          
+QVGA 
+Quarter Video Graphics Array 
+Half the resolution in each dimension as standard VGA. First appeared as a VESA mode (134h=256 color, 135h=Hi-Color) that primarily allowed 80x30 character text with graphics, and should not be confused with CGA (320x200); QVGA is normally used when describing screens on portable devices (PDAs, pocket media players, feature phones, smartphones, etc.). No set colour depth or refresh rate is associated with this standard or those that follow, as it is dependent both on the manufacturing quality of the screen and the capabilities of the attached display driver hardware, and almost always incorporates an LCD panel with no visible line-scanning. However, it would typically be in the 8- to-12 bpp (256–4096 colours) through 18 bpp (262,144 colours) range. 
+320×240 (77k) 
+76,800 
+4:3 
+                
+WQVGA 
+Wide Quarter Video Graphics Array 
+Effectively 1/16 the total resolution (1/4 in each dimension) of "Full HD", but with the height aligned to an 8-pixel "macroblock" boundary. Common in small-screen video applications, including 
+480×272 (131k) 
+480 272 
+19,200 
+20,480 
+130,560 
+4:3 
+ 
+5:4 
+   
+23,040 
+~1% narrower than 16:9 
+			portable DVD players and the Sony PSP. 						
+	TV Computer 	Non-interlaced TV-as-monitor 	Various Apple, Atari, Commodore, Sinclair, Acorn, Tandy and other home and small-office computers introduced from 1977 through to the mid- 1980s. They used televisions for display output and had a typical usable screen resolution from 102–320 pixels wide and usually 192–256 lines high, in non-interlaced (NI) mode for a more stable image (displaying a full image on each 1/50th / 1/60th-second field, instead of splitting it across each frame). The limited resolution led to displays with a characteristic wide overscan border around the active area. Some more powerful machines were able to display higher horizontal resolutions— either in text-mode alone or in low-colour bitmap graphics, and typically by halving the width of each pixel, rather than physically expanding the display area —but were still confined in the vertical dimension by the relatively slow horizontal scanning rate of a domestic TV set. These same standards—albeit with progressively greater colour depth and upstream graphical processing ability —would see extended use and popularity in TV- connected game consoles right through to the end of the 20th century. 
+ 
+140×192 NI (low-end), 320×200 NI (typical), 640×256 NI (high-end) 				4:3 (non-square pixels) 	1–4 bpp typical, 2 or 3 bpp common. 
+	ST Low/Med Resolution 	Atari ST (etc.) Colour, Broadcast- standard 	Atari ST line. Colour modes using NTSC or PAL- compliant televisions, and monochrome, composite video or RGB-component monitors. 	640×200, 320×200 				4:3 (or 16:10 with square pixels) 	2–4 bpp for ST, 2–15 bpp on the Falcon. 
+	ST High Resolution 	Atari ST (etc.) Monochrome, proprietary standard 	Atari ST line. High resolution monochrome mode using a custom non- interlaced monitor with the slightly lower vertical resolution (in order to be an integer multiple of low and medium resolution and thus utilize the same amount of RAM for the framebuffer) allowing a "flicker free" 71.25 Hz refresh rate, higher even than the highest refresh rate provided by VGA. All machines in the ST series could also use colour or monochrome VGA monitors with a proper cable or physical adapter, and all but the TT could display 640x400 at
+71.25 Hz on VGA monitors. 	640×400 			256,000 	4:3 (or 16:10 with square pixels) 	1 bpp for ST, on the Falcon: 1-8 bpp grayscale on the ST monochrome monitor, and 
+8 bpp colour on VGA/multisync monitors. 
+	TT High Resolution 	Atari TT (etc.) Monochrome, proprietary standard 	Atari TT line. High resolution monochrome mode using a custom non- interlaced ECL monitor, allowing a higher, "flicker free" 70 Hz refresh rate. 	1280×960 (1229k) 			1,228,800 	4:3 (or 16:10 with square pixels) 	1 bpp for TT. 
+	Video monitor I/NI 	Full-broadcast resolution video monitor or television 	Commodore Amiga line and others, e.g. Acorn Archimedes, Atari Falcon). They used NTSC or PAL- compliant televisions and monochrome, composite video or RGB-component monitors. The interlaced (i or I) mode produced visible flickering of finer details, eventually fixable by use of scan doubler devices and VGA monitors. 
+   
+720×480i/576i maximum. Typically 640×400i/512i or 640×200/256 NI, and 320×200/256 NI for games. 				4:3 (non-square pixels) 	Up to 6 bpp for Amiga (8 bpp with later models), typically 2– 
+4 bpp for most hi-res applications (saving memory and processing time), 4–5 bpp for games and 
+									"fake"
+12/18 bpp for static images (HAM mode). Up to 15 bpp for Archimedes and Falcon
+(12 bpp for TT), but typically 4 bpp in use. 
+	Mac Mono 9" 	Original Apple Macintosh display 	The single fixed-screen mode used in first- generation (128k and 512k) Apple Mac computers, launched in 1984, with a monochrome 9" CRT integrated into the body of the computer. Used to display one of the first mass-market full-time GUIs, and one of the earliest non-interlaced default displays with more than 256 lines of vertical resolution. (Early models used a 384×256 screen; both standards are cut down from the 720×364 of the preceding Lisa model) 	512×342 (175k) 			175,104 	Very nearly 3:2 (to within 0.2%); 256:171 exact. Displayed with square pixels on a moderately wide-screen monitor (equivalent to 16:10.67 in modern terms). 	1 bpp 
+	Mac Colour 	Apple Mac II and later models 	The second-generation Macintosh, launched in 1987, came with colour (and greyscale) capability as standard, at two levels, depending on monitor size —512×384 (1/4 of the later XGA standard) on a 12" (4:3) colour or greyscale (monochrome) monitor; 640×480 with a larger (13" or 14") high-resolution monitor (superficially similar to VGA, but at a higher 67 Hz refresh rate)— with 8-bit colour/256 grey shades at the lower resolution, and either 4-bit or 8-bit colour (16/256 grey) in high resolution depending on installed memory (256 or 512 kB), all out of a full 24-bit master palette. The result was equivalent to VGA or even PGC—but with a wide palette—at a point simultaneous with the IBM launch of VGA. 
+Later, larger monitors (15" and 16") allowed use of an SVGA-like binary-half-megapixel 832×624 resolution (at 75 Hz) that was eventually used as the default setting for the original, late-1990s iMac. Even larger 17" and 19" monitors could attain higher resolutions still, when connected to a suitably capable computer, but apart from the 1152×870 "XGA+" mode discussed further below, Mac resolutions beyond 832×624 tended to fall into line with PC standards, using what were essentially rebadged PC monitors with a different cable connection. Mac models after the II (Power Mac, Quadra, 	512×384 (197k), 640×480 (307k), 832×624 (519k) 				4:3 	4 bpp, 8 bpp, and later 16/24 bpp 
+			etc.) also allowed at first 16-bit High Colour (65,536, or "Thousands of" colours), and then 24- bit True Colour (16.7M, or "Millions of" colours), but much like PC standards beyond XGA, the increase in colour depth past 8 bpp was not strictly tied to changing resolution standards. 						
+	PowerBook internal panel 
+ 
+PowerBook, early generations 	The first PowerBook, released in 1991, replaced the original Mac Portable (basically an original Mac with an LCD, keyboard and trackball in a lunchbox- style shell), and introduced a new 640×400 greyscale screen. This was joined in 1993 with the PowerBook 165c, which kept the same resolution but added colour capability similar to that of Mac II (256 colours from a palette of 16.7 million). 	640×400 (256k) 			256,000 	16:10 / 8:5 (square pixels) 	8 bpp 
+	MDA 	Monochrome Display Adapter 	The original standard on IBM PCs and IBM PC XTs with 4 kB video RAM. Introduced in 1981 by IBM. Supports text mode only.[1] 
+  
+720×350 (252k) 			252,000 	72:35 (effectively 4:3 (non- square pixels) on CRTs but could be a variety of aspects on LCDs) 	1 bpp 
+	CGA 	Color Graphics Adapter 	Introduced in 1981 by IBM, as the first colour display standard for the IBM PC. The standard CGA graphics cards were equipped with 16 kB video RAM.[1] 	640×200 (128k) 320×200 (64k) 160×200 (32k) 				16:5
+16:10/8:5
+4:5 (effectively 4:3 on CRTs; various aspects on LCDs) 	1 bpp 2 bpp 4 bpp 
+	Hercules 		A monochrome display capable of sharp text and graphics for its time. Very popular with the Lotus 1-2-3 spreadsheet application, which was one of PC's first killer apps. Introduced in 1982. 
+ 
+720×348 (251k) 			250,560 	60:29 (effectively 4:3) 	1 bpp 
+	Orchid Graphics Adapter 		A monochrome display that expanded Monochrome Display Adapter's capabilities with graphics. Introduced in 1982. 
+  
+720×350 			252,000 	60:29 (effectively 4:3) 	1 bpp 
+	EGA 	Enhanced Graphics Adapter 	Introduced in 1984 by IBM. A resolution of 640×350 pixels of 16 different colours in 4 bits per pixel (bpp), selectable from a 64- colour palette in 2 bits per each of red-green-blue (RGB) unit.[1] Other commonly used modes were the existing CGA 320×200 and 640×200 resolutions in 4 bpp, with a fixed palette corresponding to the 16 colours available in CGA text mode, allowing an EGA card to be used in full colour with an unmodified CGA monitor by setting the correct DIP switch options; plus full EGA resolution (and CGA hi-res) in monochrome, if installed memory was insufficient for full colour at above 320×200. 	640×350 (224k), 640×200 (128k), 320×200 (64k) 				64:35, 16:5 and 16:10/8:5 (all effectively 4:3) 	4 bpp 
+	Professional Graphics Controller 
+  
+	With on-board 2D and 3D acceleration introduced in 1984 for the 8-bit PC-bus, intended for CAD applications, a triple-board display adapter with built-in processor, and displaying high-resolution, full-colour graphics at a 60 Hz frame rate.[1] 	640×480 (307k) 			307,200 	4:3 	8 bpp 
+	MCGA 	Multi-Color Graphics Array 	Introduced by IBM on ISA- based PS/2 models in 1987, with reduced cost compared to VGA. MCGA had a 320×200 256-colour (from a 262,144 colour palette) mode, and a 640×480 mode only in monochrome due to 64k video memory, compared to the 256k memory of VGA.[1] 	320×200 (64k) 640×480 (307k) 				16:10 (effectively 4:3) 4:3 (square pixels) 	8 bpp 1 bpp 
+	VGA 	Video Graphics Array 	Introduced on MCA-based PS/2 models in 1987, it replaced the digital TTL signaling of EGA and earlier standards with analog RGBHV signaling, using the synonymous VGA connector. As with EGA, the VGA standard actually encompasses a set of different resolutions; 640×480 is sometimes referred to as "VGA resolution" today, however as per the original standard this mode actually only supports 16 colours (4 bpp) at 60 Hz. Other common display modes also defined as VGA include 320×200 at 256 colours (8 bpp) (standard VGA resolution for DOS games that stems from halving the pixel rate of 640×400, but doubling color depth) and a text mode with 720×400 pixels; these modes run at 70 Hz and use non-square pixels, so 4:3 aspect correction is required for correct display. 
+Furthermore, VGA displays and adapters are generally capable of Mode X graphics, an undocumented 
+    
+mode
+increased
+standard resolutions, most commonly 320×240 (with 8 bpp and square pixels) at 60 Hz.[1] VGA, like the majority of the following standards, was capable of 
+to allow non- 
+displaying
+standard modes featured by IBM- 
+compatible
+CGA, EGA, MDA and MCGA—but typically not Hercules or PGA/PGC. 
+most 
+PCs— 	640×480 (307k) (hi-res graphics and LCD text) 720×400 (CRT text; 288k equivalent) 
+320×200 (64k), 320×240 (75k) 				4:3
+9:5 (non-square PAR 4:3) 16:10 (non-square PAR 4:3) 	4 bpp 4 bpp 8 bpp 
+	8514 		Precursor to XGA and released shortly after VGA in 1987. 8514/A cards displayed interlaced video at 43.5 Hz in a 1024×768 resolution, and at 640×480, 60 Hz non-interlaced, both with up to 256 colours.[1] 
+The high-resolution mode introduced by 8514/A became a de facto general standard in a succession of computing and digital- media fields for more than two decades, arguably more so than SVGA, with successive IBM and 	1024×768 (786k), 640×480 (307k) 				4:3 	8 bpp 
+			clone videocards and CRT monitors (a multisync monitor's grade being broadly determinable by whether it could display 1024×768 at all, or show it interlaced, non- interlaced, or "flicker- free"), LCD panels (the standard resolution for 14" and 15" 4:3 desktop monitors, and a whole generation of 11–15" laptops), early plasma and HD ready LCD televisions (albeit at a stretched 16:9 aspect ratio, showing down- scaled material), professional video projectors, and most recently, tablet computers. 
+ 
+					
+	SVGA 	Super Video Graphics Array 	An extension to VGA defined by VESA for IBM PC-compatible computers in 1989 meant to take advantage of video cards that exceeded the minimum 256 kB defined in the VGA standard. For instance, one of the early supported modes was 800×600 in 16 colours at a slightly lower 56 Hz refresh rate, leading to 800×600 sometimes being referred to as "SVGA resolution" today. 
+Over the course of the early-to-mid-1990s, "SVGA" became a quasi-standard term in PC games, typically referring to a 640×480 resolution using 256 colours (8 bpp) at 60 Hz refresh rate. Many other higher and lower modes were standardized in the VESA BIOS Extensions, leading to the establishment of "SVGA" and "VESA" as catch-all terms encompassing output modes that surpassed the original VGA specifications. 
+  
+800×600 (480k) 640×480 (307k) 			480,000 	4:3 	4 bpp 8 bpp 
+	XGA 	Extended Graphics Array 	An IBM display standard introduced in 1990. XGA built on 8514/A's existing 1024×768 mode and added support for "high colour" (65,536 colours, 16 bpp) at 640×480. The second revision ("XGA-2") was a more thorough upgrade, offering higher refresh rates (75 Hz and up, non- interlaced, up to at least 1024×768), improved performance, and a fully programmable display engine capable of almost any resolution within its physical limits. For example, 1280×1024 (5:4) 	1024×768 (786k)
+640×480 (307k), 1056×400 (text, 422k equivalent) 				4:3
+4:3, 66:25 (effectively 4:3) 	8 bpp 16 bpp 
+			or 1360×1024 (4:3) in 16 colours at 60 Hz, 1056×400 [14h] Text Mode (132×50 characters); 800×600 in 256 or 64k colours; and even as high as 1600×1200 (at a reduced 50 Hz scan rate) with a high-quality multisync monitor (or an otherwise non-standard 960×720 at 60 Hz on a lower-end one capable of high refresh rates at 800×600, but only interlaced mode at 1024×768).[1] However, the extended modes required custom drivers, and so only the basic options (1024×768×8 I, 640×480×16 NI, high-res text) were commonly used outside Windows and other hardware-abstracting graphical environments. 						
+	XGA+ 	Extended Graphics Array Plus 	Although not an official name, this term is now used to refer to 1152×864, which is the largest 4:3 array yielding less than a binary megapixel (2^20, 1048576 pixels, 1048 decimal kilopixels), thus allowing the greatest "normal" resolution at common colour depths with a standard amount of video memory (128 kB, 512 kB, 1 MB, 2 MB, etc.). Variants of this were used by Apple Computer (at 1152×870) and Sun Microsystems (at 1152×900) for 21" CRT displays. 	1152×864 (995k) 1152×870 (1002k), 1152×900 (1037k) 				4:3 	8 bpp 16 bpp 
+	HD 	High Definition (720p) 	This display aspect ratio is among the most common in recent notebook computers and desktop monitors. 
+ 
+1280×720 (921k) 
+1360×768 (1044k) 1366×768 (1049k) 				16:9 to within 0.05% accuracy 
+(683:384 exact) 	24 bpp 
+	WXGA 	Widescreen Extended Graphics Array 	A wide version of the XGA format. This display aspect ratio was common in widescreen notebook computers until ca. 2010. 	1280×800 (1024k) 			1,024,000 	16:10 	24 bpp 
+	SXGA 	Super Extended Graphics Array 	A widely used de facto standard, introduced with XGA-2 and other early "multiscan" graphics cards and monitors, with an unusual aspect ratio of 5:4 (1.25:1) instead of the more common 4:3 (1.33:1), meaning that even 4:3 pictures and video will appear letterboxed on the narrower 5:4 screens. This is generally the native resolution—with, therefore, square pixels—of standard 17" and 19" LCD monitors. It was often a recommended resolution for 17" and 19" CRTs also, though as they were usually produced in a 4:3 aspect ratio, it either gave non-square pixels or required adjustment to show small vertical borders at each side of the image. Allows 24-bit colour in 
+4 MB of graphics memory, or 4-bit colour in 640 kB. 
+Some manufacturers, noting that the de facto industry standard was VGA (Video Graphics Array), termed this the Extended Video Graphics Array, or XVGA. 
+ 
+1280×1024 (1310k) 			1,310,720 	5:4 	24 bpp 
+	SXGA+ 	Super Extended Graphics Array PLUS 	Used on 14" and 15" notebook LCD screens and a few smaller screens, until 	1400×1050 (1470k) 			1,470,000 	4:3 	24 bpp 
+the eventual market-wide phasing-out of 4:3 aspect displays. 
+               
+WXGA+ (WSXGA) 
+ 
+HD+ 
+High Definition Plus (900p) 
+This display aspect ratio is becoming popular in recent notebook computers and desktop monitors. 
+1600×900 (1440k) 
+1,440,000 16:9 
+24 bpp 
+Widescreen Extended Graphics Array PLUS 
+An enhanced version of the WXGA format. This display aspect ratio was common in widescreen notebook computers, and many 19" widescreen LCD monitors until ca. 2010. 
+1440×900 (1296k) 
+1,296,000 
+16:10 
+24 bpp 
+UXGA 	Ultra Extended Graphics Array 	A de facto high-resolution standard. This is the native resolution for many 20" LCD monitors, and was a recommended mode for some high-end 21" CRTs. 	1600×1200 (1920k) 
+WSXGA+ 	Widescreen Super Extended Graphics Array Plus 	A wide version of the SXGA+ format, the native resolution for many 22" widescreen LCD monitors, also used in larger, wide- screen notebook computers until ca. 2010. 	1680×1050 (1764k) 
+FHD 	Full High Definition (1080p) 	This display aspect ratio is the native resolution for many 24" widescreen LCD monitors, and is expected to also become a standard resolution for smaller-to- medium-sized wide-aspect tablet computers in the near future (as of 2012). 	1920×1080 (2073k) 
+WUXGA 	Widescreen Ultra Extended Graphics Array 	A wide version of the UXGA format. This display aspect ratio was popular on high-end 15" and 17" widescreen notebook computers, as well as on many 23–27" widescreen LCD monitors, until ca. 2010. It is also a popular resolution for home cinema projectors, besides 1080p, in order to show non- widescreen material slightly taller than widescreen (and therefore also slightly wider than it might otherwise be), and is the highest resolution supported by single-link DVI at standard colour depth and scan rate (i.e., no less than 24 bpp and 60 Hz non-interlaced) 	1920×1200 (2304k) 
+     
+1,920,000 
+4:3 
+24 bpp 
+    
+1,764,000 
+16:10 
+24 bpp 
+    
+2,073,600 
+16:9 
+24 bpp 
+    
+UNNAMED 
+UNNAMED 
+QWXGA 
+UNNAMED 
+UNNAMED 
+Quad Wide Extended Graphics Array 
+Used on Microsoft Surface 3. 
+4:3 superset of 1080p, common on high-resolution CRTs. 
+Samsung has a QWXGA resolution 23" LCD monitor, the 2342BWX. 
+1920×1280 (2458k) 
+1920×1440 (2765k) 
+2048×1152 (2359k) 
+2,457,600 3:2 
+2,764,800 4:3 
+2,359,296 16:9 
+24 bpp 
+24 bpp 
+2,304,000 
+16:10 
+24 bpp 
+    
+DCI 2K 	Digital Cinema Initiatives 2K 	Baseline standard for digital cinema capture, post production and presentation. 	2048×1080 (2212k) 
+     
+2,211,840 
+≈19:10,≈17:9 
+(256:135 or 1.8962:1 exact) 
+48 bpp (at 24 frame/s) 
+ 
+QXGA 	Quad Extended Graphics Array 	This is the highest resolution that generally can be displayed on analog computer monitors (most CRTs), and the highest resolution that most analogue video cards and other display transmission hardware (cables, switch boxes, signal boosters) are rated for (at 60 Hz refresh). 24-bit colour requires 9 MB of video memory (and transmission bandwidth) for a single frame. It is also the native resolution of medium-to-large latest- generation (2012) standard- aspect tablet computers. 	2048×1536 (3146k) 
+     
+3,145,728 
+4:3 
+24 bpp 
+       
+UNNAMED 
+UNNAMED 
+Used on Microsoft Surface Pro 3. 
+2160×1440 (3110k) 
+3,110,400 3:2 
+24 bpp 
+ 
+UNNAMED 	UNNAMED 	Sometimes casually referred to as "1080p ultrawide". Referred to occasionally as "UW- UXGA". 	2560×1080 (2765k) 
+QHD 	Quad High Definition 	 
+The native resolution for many higher end 27" widescreen IPS panels and smartphones (from the mid- 2010s onward); often referred to as "WQHD" 	2560×1440 (3686k) 
+WQXGA 	Widescreen Quad Extended Graphics Array 	 
+A version of the XGA format, the native resolution for many 30" widescreen LCD monitors. Also, the highest resolution supported by dual-link DVI at a standard colour depth and non-interlaced refresh rate (i.e. at least 24 bpp and 60 Hz). Used on MacBook Pro with Retina display (13.3"). Requires 12 MB of memory/bandwidth for a single frame. 	2560×1600 (4096k) 
+     
+2,764,800 
+≈21:9 
+(64:27, or 2.370:1, or 21.3:9 exact) 
+24 bpp 
+    
+3,686,400 
+16:9 
+24 bpp 
+    
+UNNAMED 
+QSXGA 
+UNNAMED 
+UNNAMED 
+UNNAMED 
+WQSXGA 
+QUXGA 
+UW4K 
+UNNAMED 
+Quad Super Extended Graphics Array 
+UNNAMED 
+UNNAMED 
+UNNAMED 
+Wide Quad Super Extended Graphics Array 
+Quad Ultra Extended Graphics Array 
+Ultra-Wide 4K 
+Used on Microsoft Surface Pro 4. 
+Double the resolution of SXGA in each dimension. 
+Used on LG G6, LG V30 and Pixel 2 XL smartphones. 
+Used on Samsung Galaxy S8 and Samsung Galaxy Note 8 smartphones. 
+Used on Microsoft Surface Book. 
+Commonly used on Ultra HD Blu-ray discs. 
+2736×1824 (4991k) 
+2560×2048 (5243k) 
+2880×1440 (4147k) 
+2960×1440 (4262k) 
+3000×2000 (6000k) 
+3200×2048 (6554k) 
+3200×2400 (7680k) 
+3840×1600 (6144k) 
+4,990,464 3:2 
+5,242,800 5:4 
+4,147,200 18:9 
+4,262,400 18.5:9 
+6,000,000 3:2 
+6,553,600 ≈16:10
+(25:16 exact) 
+7,680,000 4:3 
+6,144,000 12:5 
+24 bpp 
+24 bpp 
+24 bpp 
+24 bpp 
+24 bpp 
+24 bpp 
+24 bpp 
+24 bpp 
+4,096,000 
+16:10 
+24 bpp 
+QWXGA+[2] 	Quad Wide Extended Graphics Array Plus 	Used on MacBook Pro with Retina display (15.4"). Double the resolution of the previous 1440×900 standard in each dimension. 
+  
+2880×1800 (5184k) 
+ 
+5,184,000 
+16:10 
+24 bpp 
+    
+
