@@ -1,0 +1,104 @@
+ 
+Commodore Datasette 
+The Commodore 1530 (C2N) Datasette, later also Datassette (a portmanteau of data and cassette), is Commodore's dedicated magnetic tape data storage device. Using compact cassettes as the storage medium, it provides inexpensive storage to Commodore's 8-bit home/personal computers, notably the PET, VIC-20, and C64. A physically similar model, Commodore 1531, was made for the Commodore 16 and Plus/4 series computers. 
+ 
+ 
+The third, most common version of the 1530 C2N Datassette 
+Contents 
+Features 
+Encoding 
+Models 
+PET, VIC-20, C64/128 C16/116 and Plus/4 
+Popularity See also References External links 
+        
+Features 
+Typical compact cassette interfaces of the late 1970s use a small controller in the computer to convert digital data to and from analog tones. The interface is then connected to the cassette deck using normal sound wiring like RCA jacks or 3.5mm phone jacks. This sort of system was used on the Apple II[1] and Color Computer, as well as many S-100 bus systems, and allow them to be used with any cassette player with suitable connections.[2] 
+In the Datasette, instead of writing two tones to tape to indicate
+bits, patterns of square waves are used, including a parity bit.
+Programs are written twice to tape for error correction; if an error is
+detected when reading the first recording, the computer corrects it
+with data from the second.[3] The Datasette has built-in analog-to-digital converters and audio filters to convert the computer's digital data into analog sound and vice versa. Connection to the computer is done via a proprietary edge connector (Commodore 1530) or mini-DIN connector (1531). The absence of recordable audio signals on this interface makes the Datasette and clones the only cassette recorders usable with Commodore computers, until aftermarket converters made the use of ordinary recorders possible. 
+ 
+Because of its digital format the Datasette is both more reliable than other data cassette systems and very slow,[3][4] transferring data at around 50 bytes per second. After the Datasette's launch, however, special turbo tape software appeared, providing much faster tape operation (loading and saving). Such software was integrated into most commercial prerecorded applications (mostly games), as well as being available separately for loading and saving the users' homemade programs and data. These programs were only widely used in Europe, as the US market had long since moved onto disks. 
+Datasettes can typically store about 100 kByte per 30 minute side.[5] The use of turbo tape and other fast loaders increased this 
+number to roughly 1000 kByte. 
+The Datasette has only one connection cable, with a 0.156-inch (4.0 mm)–spacing[6] PCB edge connector at the computer end. All input/output signals to the Datasette are all digital, and so all digital-to-analog conversion, and vice versa, is handled within the unit. Power is also included in this cable. The pinout is ground, +5 V DC, motor, read, write, key-sense.[7] The sense signal monitors the play, rewind, and fast- forward buttons but cannot differentiate between them. A mechanical interlock prevents any two of them from being pressed at the same time. The motor power is derived from the computer's unregulated 9 V DC supply[8] via a transistor circuit.[9] 
+Encoding 
+To record physical data, the zero-crossing from positive to negative voltage of the analog signal is measured. The resulting time between these positive to negative crossings is then compared to a threshold to 
+determine whether the time since the last crossing is short (0) or long (1).[10] Note the lower amplitude for the shorter periods. 
+A circuit in the tape unit transforms the analog signal into a logical 1 or 0, which is then transmitted to the computer via the tape connector. Inside the computer, the first Complex Interface Adapter (6526) in the C64 senses when the signal goes from one to zero. This event is called trigger and causes an interrupt request. This event can be handled by a handler code, or simply discovered by testing bit 4 of location $DC0D. The points that trigger this event are indicated by the black circles in the figure.[10] 
+Inside the tape device the read head signal is fed into an operational amplifier (1) whose output signal is DC-filtered. Op-amp (2) amplifies and feeds an RC filter. Op-amp (3) amplifies the signal again followed by another DC filter. Op-amp (4) amplifies the signal into clipping the sine-formed signal. The positive and negative rails for all op-amps are wired to +5V DC and GND. The clipped signal therefore fits into the TTL electrical level window of the Schmitt trigger step that in turn feeds the digital cassette port.[11] 
+On the PAL version of the C64, the time granularity is 1.014 μs (for NTSC 0.978 μs). Since each bit uses 3284 clock cycles this means 3284 * 1.014 μs = 3330 μs/bit. or a 300 bit/s data rate. 
+Once the bits can be decoded, they are fed into a shift register and are continuously compared to a special bit sequence. This bit sequence can also be seen as a byte. A bit-sequence match means that the stream is byte-synchronized. The first byte to compare with is called lead-in byte. If matched, it's compared to the sync byte as well.[10] 
+An example: Turbo Tape 64 has a lead-in byte $02 (binary 00000010), sync byte $09 (binary 00001001) and a following sync sequence of $08, $07, $06, $05, $04, $03, $02, $01.[3][10] 
+Models 
+PET, VIC-20, C64/128 
+There are at least four main models of the 1530/C2N Datassette: 
+The original modified Sanyo M1540A cassette drive, built into the earliest models of PET in 1977. This was a standard shoebox tape recorder with a corner of the case removed and modified electronics; a Commodore PCB was installed internally in place of the Sanyo electronics. To disguise the Sanyo brand, Commodore simply fitted a Commodore badge over the original logo.[12] 
+The second built-in Datassette in the PET 2001: another standard consumer model (sold in some markets as CCE CCT1020) modified with a Commodore PCB. Black cassette lid, five white keys, no tape counter, no SAVE LED[13] 
+Black body original-shape model, black cassette lid, five black keys, no tape counter, no SAVE LED 
+White body original-shape model, black cassette lid, five black keys, with tape counter, no SAVE LED 
+White body new-shape model, silver cassette lid, six black keys, with white tape counter SAVE LED on left side 
+White body new-shape model, silver cassette lid, six black keys, with tape counter and a red SAVE LED on the right 
+As above but with black pattern and silvery Commodore logo, six black keys, tape counter and a red SAVE LED on right side 
+The first two external models were made as PET peripherals, and styled after the PET 2001 built-in tape drive. The latter two were styled and marketed for the VIC-20 and C64. All 1530s are compatible with all those computers, as well as the C128. 
+In addition to this, some models came with a small hole above the keys, to allow access to the adjustment screw of the tape head azimuth position. A small screwdriver can thus easily be used to affect the adjustment without disassembling the Datassette's chassis. 
+Confusingly, the Datassette at various times was sold both as the C2N DATASETTE UNIT Model 1530 and as the 1530 DATASSETTE UNIT Model C2N. Note the difference in spelling (one S versus two) used on the original product packaging.[14] 
+Like Datasette models, the recording format is compatible across computers; the VIC, for example, can read PET cassettes.[15][16] 
+C16/116 and Plus/4 
+Similar in physical appearance to the 1530/C2N models is the Commodore 1531, made for the Commodore 16 and Plus/4 series computers. This has a Mini-DIN connector in place of the PCB edge connector. This can be used with a C64/128 via an adaptor, which was supplied by Commodore with some units. 
+Black/charcoal body new shape model, silver cassette lid, six light gray keys, with tape counter and a red SAVE LED 
+Popularity 
+The Datasette was more popular outside than inside the United
+States. U.S. Gold, which imported American computer games to
+Britain, often had to wait until they were converted from disk
+because most British Commodore 64 owners used tape,[17][18]
+while the US magazine Compute!'s Gazette reported that by 1983
+"90 percent of new Commodore 64 owners bought a disk drive
+with their computer".[19] Computer Gaming World reported in
+1986 that British cassette-based software had failed in the United
+States because "97% of the Commodore systems in the USA have
+disk drives";[20] by contrast, MicroProse reported in 1987 that
+80% of its 100,000 sales of Gunship in the UK were on
+cassette.[21] In the United States disk drives quickly became
+standard, despite the 1541 costing roughly five times as much as a
+Datasette. In most parts of Europe, the Datasette was the medium of choice for several years after its launch, although floppy disk drives were generally available. The inexpensive and widely available audio cassettes made the Datasette a good choice for the budget-aware home computer mass market. 
+See also 
+Famicom Data Recorder Fast loader
+IBM cassette tape
+Kansas City standard Magnetic tape data storage 
+References 
+1. "The Apple II Cassette Interface". Apple Orchard. Spring 1981. p. 57.
+2. Friedman, Herb (February 1983). "The Five Friendliest Computers". Popular Mechanics. 
+p. 97. 
+3. De Ceukelaire, Harrie (February 1985). "How TurboTape Works" (http://www.atarimagazine s.com/compute/issue57/turbotape.html). Compute!. p. 112. Retrieved 30 October 2013. 
+4. Waite, Mitchell; Lafore, Robert; Volpe, Jerry (1985). "Peripherals: Displays, Disk Drives, Printers, and More" (https://archive.org/stream/The_Official_Book_for_the_Commodore_128 #page/n21/mode/2up). The Official Book for the Commodore 128 Personal Computer. Howard W. Sams & Co. pp. 11–32. ISBN 0-672-22456-9. 
+5. "Basic Commodore information" (http://starbase.globalpc.net/~vanessa/hobbies/commodore -info.html). 
+6. Rupert, Dale (July 1987). "Rupert Report: Computers in Control" (https://archive.org/stream/a hoy-magazine-43/Ahoy_43_July_1987#page/n35/mode/2up). Ahoy!. New York: Ion International. p. 32. ISSN 8750-4383 (https://www.worldcat.org/issn/8750-4383). Retrieved 2018-04-12. 
+7. pinouts.ru - C64 Cassette pinout (http://old.pinouts.ru/Storage/CassetteC64_pinout.shtml), 2012-01-15 
+8. Commodore 64 Programmer's Reference Guide (http://www.zimmers.net/anonftp/pub/cbm/s chematics/computers/c64/C64SchematicP2.png). West Chester: Commodore Business Machines. 1984. Commodore 64 Schematic Diagram. ISBN 0-672-22056-3. Retrieved 2018-04-12. 
+9. SAMS Computerfacts CC4: Computer: Commodore 64. Indianapolis: Howard W. Sams. 1984. p. 2. 
+10. "How Commodore tapes work" (http://wav-prg.sourceforge.net/tape.html). 091205 wav- prg.sourceforge.net 
+11. Datasette service manual model C2N/1530/1531, preliminary, Oct. 1984 PN-314002-02 
+12. http://www.zimmers.net/anonftp/pub/cbm/faq/trivia/cbm-trivia-13.txt 
+13. Abril, Editora (26 October 1973). "Placar Magazine" (https://books.google.com/books?id=Be 5xZ1ovVx8C&q=transicorder+ct+1020&pg=PA11). Editora Abril. Retrieved 27 June 2017 – via Google Books. 
+14. Bo Zimmerman. "Commodore Datasettes" (http://www.zimmers.net/cbmpics/dtapes.html). Commodore Gallery. Retrieved 20 April 2012. 
+15. Thornburg, David D. (April 1981). "The Commodore VIC-20: A First Look" (http://www.atarim agazines.com/compute/issue11/12_1_THE_COMMODORE_VIC- 20_A_FIRST_LOOK.php). Compute!. p. 26. 
+16. Butterfield, JIm (April 1981). "Advice to PET Owners: How To Be A VIC Expert" (http://www.a tarimagazines.com/compute/issue11/17_1_ADVICE_TO_PET_OWNERS_HOW_TO_BE_ A_VIC_EXPERT.php). Compute!. No. 11. p. 34. 
+17. Anderson, Chris (June 1985). "On top of the US Goldmine" (https://archive.org/stream/zzap6 4-magazine-002/ZZap_64_Issue_002_1985_Jun#page/n45/mode/2up). Zzap!64 (interview). pp. 46–48. Retrieved 26 October 2013. 
+18. Pountain, Dick (January 1985). "The Amstrad CPC 464" (https://archive.org/details/BYTE_V ol_10-01_1985-01_Through_The_Hourglass). BYTE. pp. 401 (https://archive.org/details/BY TE_Vol_10-01_1985-01_Through_The_Hourglass/page/n402). Retrieved 27 October 2013. 
+19. Halfhill, Tom (Dec 1983). "The Editor's Notes" (https://archive.org/stream/1983-12-computeg azette/Compute_Gazette_Issue_06_1983_Dec#page/n7/mode/2up). Compute!'s Gazette (editorial). p. 6. Retrieved 6 February 2016. 
+20. Wagner, Roy (August 1986). "The Commodore Key" (http://www.cgwmuseum.org/galleries/i ndex.php?year=1986&pub=2&id=30). Computer Gaming World. p. 28. Retrieved
+1 November 2013. 
+21. Brooks, M. Evan (November 1987). "Titans of the Computer Gaming World / MicroProse" (htt p://www.cgwmuseum.org/galleries/index.php?year=1987&pub=2&id=41). Computer Gaming World. p. 16. Retrieved 2 November 2013. 
+External links 
+Similar Commodore tape drives (https://web.archive.org/web/20060623113910/http://www.x s4all.nl/~lagendr/Menu/DATS.htm) 
+Datasette photos (http://www.zimmers.net/cbmpics/dtapes.html) 
+Description of tape format with conversion utilities and code (http://www.zimmers.net/anonft p/pub/cbm/crossplatform/transfer/C2N232/) 
+C2N232 project (http://www.ktverkko.fi/~msmakela/8bit/c2n232/index.en.html) to build a hardware adaptor/software program to archive Commodore Datasette files to a modern computer. 
+DC2N Homepage (http://www.luigidifraia.com/c64/dc2n/index.html) Digital C2N replacement project. 
+Sketchup model of the Commodore Datasette 1530. (https://3dwarehouse.sketchup.com/mo del/190d61f2e39c17bbd51f7d3e5267fbfb/Commodore-Datasette-1530) Sketchup model of the Commodore Datasette 1530. 
+Retrieved from "https://en.wikipedia.org/w/index.php?title=Commodore_Datasette&oldid=1030425545" 
+This page was last edited on 25 June 2021, at 20:49 (UTC). 
+Text is available under the Creative Commons Attribution-ShareAlike License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization. 
+
