@@ -1,0 +1,359 @@
+CTIA and GTIA
+Color Television Interface Adaptor[1] (CTIA) and its successor Graphic Television Interface Adaptor[1] (GTIA) are custom chips used in the Atari 8-bit family of computers and in the Atari 5200 home video game console. In these systems, a CTIA or GTIA chip works together with ANTIC to produce the video display. ANTIC generates the playfield graphics (text and bitmap) while CTIA/GTIA provides the color for the playfield and adds overlay objects known as player/missile graphics (sprites). Under the direction of Jay Miner, the CTIA/GTIA chips were designed by George McLeod with technical assistance of Steve Smith.[2][3][4] 
+Color Television Interface Adaptor and Graphic Television Interface Adaptor are names of the
+chips as stated in the Atari field service manual.[1] Various publications named the chips differently, sometimes using the alternative spelling Adapter[5][6] or Graphics,[3] or claiming that the "C" in "CTIA" stands for Colleen/Candy[5] and "G" in "GTIA" is for George 
+History 
+2600 and TIA 
+Atari had built their first display driver chip, the Television Interface Adaptor but universally referred to as the TIA, as part of the Atari 2600 console.[8] The TIA display logically consisted of two primary sets of objects, the "players" and "missiles" that represented moving objects, and the "playfield" which represented the static background image on which the action took place. The chip used data in memory registers to produce digital signals that were converted in realtime via a digital-to-analog converter and RF modulator to produce a television display. 
+The conventional way to draw the playfield is to use a bitmap held in a frame buffer, in which each memory location in the frame buffer represents one or more locations on the screen. In the case of the 2600, which normally used a resolution of 160x192 pixels, a frame buffer would need to have at least 160x192/8 = 3840 bytes of memory. Built in an era where RAM was very expensive, the TIA could not afford this solution. 
+Instead, the system implemented a display system that used a single 20-bit memory register that could be copied or mirrored on the right half of the screen to make what was effectively a 40-bit display. Each location could be displayed in one of four colors, from a palette of 128 possible colors. The TIA also included several other display objects, the "players" and "missiles". These consisted of two 8-bit wide objects 
+known as "players", a single 1-bit object known as the "ball", and two 1-bit "missiles". All of these objects could be moved to arbitrary horizontal locations via settings in other registers. 
+The key to the TIA system, and the 2600's low price, was that the system implemented only enough memory to draw a single line of the display, all of which held in registers. To draw an entire screen full of data, the user code would wait until the television display reached the right side of the screen and update the registers for the playfield and player/missiles to correctly reflect the next line on the display. This scheme drew the screen line-by-line from program code on the ROM cartridge, a technique known as "racing the beam". 
+CTIA 
+Atari initially estimated that the 2600 would have short market lifetime of three years when it was designed in 1976, which meant the company would need a new design by 1979.[8] Initially this new design was simply an updated 2600-like game console, and was built around a similar basic design, simply updated. Work on what would become the CTIA started in 1977, and aimed at delivering a system with twice the resolution and twice the number of colours. Moreover, by varying the number of colours in the playfield, much higher resolutions up to 320 pixels horizontally could be supported. Players and missiles were also updated, including four 8-bit players and four 2- bit missiles, but also allowing an additional mode to combine the four missiles into a fifth player. 
+Shortly after design began, the home computer revolution started in earnest in the later half of 1977. In response, Atari decided to release two versions of the new machine, a low-end model as a games console, and a high-end version as a home computer.[8] In either role, a more complex playfield would be needed, especially support for character graphics in the computer role. Design of the CTIA was well advanced at this point, so instead of a redesign a clever solution was provided by adding a second chip that would effectively automate the process of racing the beam. Instead of the user's programming updating the CTIA's registers based on its interrupt timing, the new ANTIC would handle this chore, reading data from a framebuffer and feeding that to the CTIA on the fly. 
+As a result of these changes, the new chips provide greatly improved number and selection of graphics modes over the TIA. Instead of a single playfield mode with 20 or 40 bits of resolution, the CTIA/ANTIC pair can display six text modes and eight graphics modes with various resolutions and color depths, allowing the programmer to choose a balance between resolution, colours, and memory use for their display. 
+CTIA vs. GTIA 
+The original design of the CTIA chip also included three additional color interpretations of the normal graphics modes. This feature provides alternate expressions of ANTIC's high-resolution graphics modes presenting 1 bit per pixel, 2 colors with one-half color clock wide pixels as 4 bits per pixel, up to 16 colors, two-color clock wide pixels. This feature was ready before the computers' November 1979 debut, but was delayed so much in the development cycle that Atari had already ordered a batch of about 100,000 CTIA chips with the graphics modes missing. Not wanting to throw away the already-produced chips, the company decided to use them in the initial release of the Atari 400 and 800 models in the US market. The CTIA-equipped computers, lacking the 3 extra color modes, were shipped until October– November 1981.[5][6] From this point, all new Atari units were equipped with the new chip, now called GTIA, that supported the new color interpretation modes.[6][9] 
+The original Atari 800/400 operating system supported the GTIA alternate color interpretation modes from the start,[9] which allowed for easy replacement of the CTIA with the GTIA once it was ready. Atari authorized service centers would install a GTIA chip in CTIA-equipped computers free of charge if the computer was under warranty; otherwise the replacement would cost $62.52.[6][7] 
+GTIA was also mounted in all later Atari XL and XE computers and Atari 5200 consoles. 
+Features 
+The list below describes CTIA/GTIA's inherent hardware capabilities meaning the intended functionality of the hardware itself, not including results achieved by CPU-serviced interrupts or display kernels driving frequent register changes. 
+CTIA/GTIA is a television interface device with the following features: 
+Interprets the Playfield graphics data stream from ANTIC to apply color to the display. 
+Merges four Player and four Missile overlay objects (aka sprites) with ANTIC's Playfield graphics. Player/Missile features include: 
+Player/Missile pixel positioning is independent of the Playfield: 
+Player/Missile objects function normally in the vertical and horizontal overscan areas beyond the displayed Playfield. 
+Player/Missile objects function normally without an ANTIC Playfield. 
+Eight-bit wide Player objects and two-bit wide Missile objects where each bit represents one displayed pixel. Variable pixel width (1, 2, or 4 color clocks wide)
+Each Player/Missile object is vertically the height of the entire screen.
+Variable pixel height when the data is supplied by ANTIC DMA (single or double scan lines per data) 
+Ability to independently shift each P/M object by one scan line vertically when operating on double scan lines per data. 
+Each Player and its associated Missile has a dedicated color register separate from the Playfield colors. Multiple priority schemes for the order of graphics layers (P/M Graphics vs playfield)
+Color merging between Players and Playfield producing extra colors.
+Color merging between pairs of Players producing multi-color Players. 
+Missiles can be grouped together into a Fifth Player that uses a separate color register. 
+Collision detection between Players, Missiles, and Playfield graphics. 
+There are no fixed colors for normal (CTIA) color interpretation mode. All colors are generated via indirection through nine color registers. (Four for Player/Missile graphics, four for the Playfield, and one shared between the Playfield and the Fifth Player feature.) 
+Normal color interpretation mode provides choice of colors from a 128 color palette (16 colors with 8 luminance values for each) 
+A GTIA color interpretation mode can generate 16 luminances per color providing a 256 color palette. The GTIA version of the chip adds three alternate color interpretation modes for the Playfield graphics. 
+16 shades of a single hue from the 16 possible hues in the Atari palette. This is accessible in Atari BASIC as Graphics 9. 
+15 hues in a single shade/luminance value plus background. This is accessible in Atari BASIC as Graphics 11. 
+9 colors in any hue and luminance from the palette accomplished using all the Player/Missile and Playfield color registers for the Playfield colors. This is accessible in Atari BASIC as Graphics 10. 
+Reads the state of the joystick triggers (bottom buttons only for the Atari 5200 controllers). It includes four input/output pins that are used in different ways depending on the system: 
+In Atari 8-bit computers, three of the pins are used to read state of the console keys (Start/Select/Option). 
+The fourth pin controls the speaker built into the Atari 400/800 to generate keyboard clicks. On later models there is no speaker, but the key click is still generated by GTIA and mixed with the regular audio output. 
+In the Atari 5200, the pins are used as part of the process to read the controller keyboards. 
+Versions 
+by part number 
+C012295 — NTSC CTIA[10][11]
+C014805 — NTSC GTIA[12]
+C014889 — PAL GTIA[12]
+C020120 — French SECAM GTIA (FGTIA)[12] 
+Atari, Inc. intended to combine functions of the ANTIC and GTIA chips in one integrated circuit to reduce production costs of Atari computers and 5200 consoles. Two such prototype circuits were being developed, however none of them entered production. 
+C020577 — CGIA[12] C021737 — KERI[12][13][14] 
+Pinout 
+Registers 
+ 
+The Atari 8-bit computers map CTIA/GTIA to the $D0xxhex page and the Atari 5200 console maps it to the $C0xxhex page. 
+CTIA/GTIA provides 54 Read/Write registers controlling Player/Missile graphics, Playfield colors, joystick triggers, and console keys. Many CTIA/GTIA register addresses have dual purposes performing different functions as a Read vs a Write register. Therefore, no code should read Hardware registers expecting to retrieve the previously written value. 
+This problem is solved for many write registers by Operating System Shadow registers implemented in regular RAM as places to store the last value written to registers. Operating System Shadow registers are copied from RAM to the hardware registers during the Vertical Blank. Therefore, any write to hardware registers which have corresponding shadow registers will be overwritten by the value of the Shadow registers during the next Vertical Blank. 
+Some Write registers do not have corresponding Shadow registers. They can be safely written by an application without the value being overwritten during the vertical blank. If the application needs to know the last state of the register then it is the responsibility of the application to remember what it wrote. 
+Operating System Shadow registers also exist for some Read registers where reading the value directly from hardware at an unknown stage in the display cycle may return inconsistent results. 
+Name Description 
+Read/Write 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Read 
+Write 
+Write 
+Write 
+Write 
+Write 
+Write 
+Hex Dec Addr Addr 
+$D000 53248 
+$D000 53248 
+$D001 53249 
+$D001 53249 
+$D002 53250 
+$D002 53250 
+$D003 53251 
+$D003 53251 
+$D004 53252 
+$D004 53252 
+$D005 53253 
+$D005 53253 
+$D006 53254 
+$D006 53254 
+$D007 53255 
+$D007 53255 
+$D008 53256 
+$D008 53256 
+$D009 53257 
+$D009 53257 
+$D00A 53258 
+$D00A 53258 
+$D00B 53259 
+$D00B 53259 
+$D00C 53260 
+$D00C 53260 
+$D00D 53261 
+$D00D 53261 
+$D00E 53262 
+$D00E 53262 
+$D00F 53263 
+$D00F 53263 
+$D010 53264 
+$D010 53264 
+$D011 53265 
+$D011 53265 
+$D012 53266 
+$D012 53266 
+$D013 53267 
+$D013 53267 
+$D014 53268 
+$D014 53268 
+$D015 53269 
+$D016 53270 
+$D017 53271 
+$D018 53272 
+$D019 53273 
+$D01A 53274 
+Shadow Name 
+Shadow Hex Addr 
+Shadow Dec Addr 
+HPOSP0 Horizontal Position of Player 0 
+M0PF Missile 0 to Playfield collisions 
+HPOSP1 Horizontal Position of Player 1 
+M1PF Missile 1 to Playfield collisions 
+HPOSP2 Horizontal Position of Player 2 
+M2PF Missile 2 to Playfield collisions 
+HPOSP3 Horizontal Position of Player 3 
+M3PF Missile 3 to Playfield collisions 
+HPOSM0 Horizontal Position of Missile 0 
+P0PF Player 0 to Playfield collisions 
+HPOSM1 Horizontal Position of Missile 1 
+P1PF Player 1 to Playfield collisions 
+HPOSM2 Horizontal Position of Missile 2 
+P2PF Player 2 to Playfield collisions 
+HPOSM3 Horizontal Position of Missile 3 
+P3PF Player 3 to Playfield collisions 
+SIZEP0 Size of Player 0 
+M0PL Missile 0 to Player 
+SIZEP1 Size of Player 1 
+M1PL Missile 1 to Player 
+SIZEP2 Size of Player 2 
+M2PL Missile 2 to Player 
+SIZEP3 Size of Player 3 
+M3PL Missile 3 to Player 
+SIZEM Size of all Missiles 
+collisions 
+collisions 
+collisions 
+collisions 
+P0PL Player 0 to Player collisions 
+GRAFP0 Graphics pattern for Player 0 
+P1PL Player 1 to Player collisions 
+GRAFP1 Graphics pattern for Player 1 
+P2PL Player 2 to Player collisions 
+GRAFP2 Graphics pattern for Player 2 
+P3PL Player 3 to Player collisions 
+GRAFP3 Graphics pattern for Player 3 
+TRIG0 Joystick 0 trigger. 
+GRAFM Graphics pattern for all Missiles 
+TRIG1 Joystick 1 trigger. 
+COLPM0 Color/luminance of Player and Missile 0. 
+TRIG2 Joystick 2 trigger. 
+COLPM1 Color/luminance of Player and Missile 1. 
+TRIG3 Joystick 3 trigger. 
+COLPM2 Color/luminance of Player and Missile 2. 
+PAL PAL flags. 
+COLPM3 Color/luminance of Player and Missile 3. 
+1.	COLPF0  Color/luminance of Playfield 0. 
+2.	COLPF1  Color/luminance of Playfield 1. 
+3.	COLPF2  Color/luminance of Playfield 2. 
+4.	COLPF3  Color/luminance of Playfield 3. 
+COLBK Color/luminance of Playfield background. 
+STRIG0 
+STRIG1 
+PCOLOR0 
+STRIG2 
+PCOLOR1 
+STRIG3 
+PCOLOR2 
+PCOLOR3 
+COLOR0 
+COLOR1 
+COLOR2 
+COLOR3 
+COLOR4 
+$0284 
+$0285 
+$02C0 
+$0286 
+$02C1 
+$0287 
+$02C2 
+$02C3 
+$02C4 
+$02C5 
+$02C6 
+$02C7 
+$02C8 
+644 
+645 
+704 
+646 
+705 
+647 
+706 
+707 
+708 
+709 
+710 
+711 
+712 
+
+PRIOR 
+VDELAY 
+GRACTL 
+HITCLR 
+CONSPK 
+CONSOL 
+Priority selection, fifth player, and GTIA modes 
+Vertical Delay P/M Graphics 
+Graphics Control. 
+Clear Collisions 
+Console Speaker 
+Console Keys 
+Write 
+Write 
+Write 
+Write 
+Write 
+Read 
+2.	$D01B  53275 
+3.	$D01C  53276 
+4.	$D01D  53277 
+5.	$D01E  53278 
+6.	$D01F  53279 
+$D01F 53279 
+GPRIOR 
+$026F 623
+In the individual register listings below the following legend applies: 
+
+Bit Value 
+0 
+1 
+? 
+- 
+label 
+Description 
+Bit must be 0 
+Bit may be either 0 or 1, and is used for a purpose. 
+Bit is unused, or should not be expected to be a certain value 
+Refer to a later explanation for the purpose of the bit. 
+Player/Missile Horizontal Coordinates 
+These registers specify the horizontal position in color clocks of the left edge (the high bit of the GRAF* byte patterns) of Player/Missile objects. Coordinates are always based on the display hardware's color clock engine, NOT simply the current Playfield display mode. This also means Player/Missile objects can be moved into overscan areas beyond the current Playfield mode. 
+Note that while Missile objects bit patterns share the same byte for displayed pixels (GRAFM) each Missile can be independently positioned. When the "fifth Player" option is enabled (See PRIOR/GPRIOR register) turning the four Missiles into one "Player" the Missiles switch from displaying the color of the associated Player object to displaying the value of COLPF3. The new "Player's" position on screen must be set by specifying the position of each Missile individually. 
+Player/Missile pixels are only rendered within the visible portions of the GTIA's pixel engine. Player/Missile objects are not rendered during the horizontal blank or the vertical blank. However, an object can be partially within the horizontal blank. The objects' pixels that fall outside of the horizontal blank are then within the visible portion of the display and can still register collisions. The horizontal position range of visible color clocks is $22hex/34dec to $DDhex/221dec. 
+To remove a Player/Missile object from the visible display area horizontal positions (left) 0 and (right) $DEhex/222dec (or greater) will insure no pixels are rendered regardless of the size of the Player/Missile object and so no unintentional collisions can be flagged. 
+HPOSP0 $D000 Write 
+Horizontal Position of Player 0 
+HPOSP1 $D001 Write 
+Horizontal Position of Player 1 
+HPOSP2 $D002 Write 
+Horizontal Position of Player 2 
+HPOSP3 $D003 Write 
+Horizontal Position of Player 3 
+HPOSM0 $D004 Write 
+Horizontal Position of Missile 0 
+HPOSM1 $D005 Write 
+Horizontal Position of Missile 1 
+Player/Missile Graphics Patterns 
+Each Player object has its own 8-bit pattern register. Missile objects share one register with 2 bits per each Missile. Once a value is set it will continue to be displayed on each scan line. With no other intervention by CPU or ANTIC DMA to update the values the result is vertical stripe patterns the height of the screen including overscan areas. This mode of operation does not incur a CPU or DMA toll on the computer. It is useful for displaying alternate colored borders and vertical lines separating screen regions. 
+GRAFP0 $D00D Write 
+Graphics pattern for Player 0 
+GRAFP1 $D00E Write 
+Graphics pattern for Player 1 
+GRAFP2 $D00F Write 
+Graphics pattern for Player 2 
+GRAFP3 $D010 Write 
+Each Player is 8 bits (pixels) wide. Where a bit is set, a pixel is displayed in the color assigned to the color register associated to the Player. Where a bit is not set the Player object is transparent, showing Players, Missiles, Playfield pixels, or the background color. Pixel output begins at the horizontal position specified by the Player's HPOS value with the highest bit output first. 
+         
+GRAFM $D011 Write 
+Graphics pattern for all Missiles 
+Each Missile is 2 bits (pixels) wide. Where a bit is set, a pixel is displayed in the color assigned to the color register for the Player associated to the Missile. When Fifth Player is enabled (see PRIOR/GPRIOR) the Missiles pixels all display COLPF3. Where a bit is not set the Missile object is transparent, showing Players, Missiles, Playfield pixels, or the background color. Pixel output begins at the horizontal position specified by the Missile's HPOS value with the highest bit output first. 
+Player/Missile Collisions 
+CTIA/GTIA has 60 bits providing automatic detection of collisions when Player, Missile, and Playfield pixels intersect. A single bit indicates a non-zero pixel of the Player/Missile object has intersected a pixel of a specific color register. There is no collision registered for pixels rendered using the background color register/value. This system provides instant, pixel-perfect overlap comparison without expensive CPU evaluation of bounding box or image bitmap masking. 
+The actual color value of an object is not considered. If Player, Missile, Playfield, and Background color registers are all the same value making the objects effectively "invisible", the intersections of objects will still register collisions. This is useful for making hidden or secret objects and walls. 
+Obscured intersections will also register collisions. If a Player object priority is behind a Playfield color register and another Player object priority is higher (foreground) than the Playfield, and the foreground Player pixels obscure both the Playfield and the Player object behind the Playfield, then the collision between the Playfield and both the background and foreground Player objects will register along with the collision between the foreground and background Player objects. 
+Note that there is no Missile to Missile collision. 
+Player/Missile collisions can only occur when Player/Missile object pixels occur within the visible portions of the display. Player/Missile objects are not rendered during the horizontal blank or the vertical blank. The range of visible color clocks is 34 to 221, and the visible scan lines range from line 8 through line 247. Player/Missile data outside of these coordinates are not rendered and will not register collisions. An object can be partially within the horizontal blank. The objects' pixels that fall outside of the horizontal blank are within the visible portion of the display and can still register collisions. 
+To remove a Player/Missile object from the visible display area horizontal positions (left) 0 and (right) 222 (or greater) will insure no pixels are rendered regardless of the size of the Player/Missile object and so no unintentional collisions can be flagged. 
+Finally, Player, Missile, and Playfield objects collision detection is real-time, registering a collision as the image pixels are merged and output for display. Checking an object's collision bits before the object has been rendered by CTIA/GTIA will show no collision. 
+Once set, collisions remain in effect until cleared by writing to the HITCLR register. Effective collision response routines should occur after the targeted objects have been displayed, or at the end of a frame or during the Vertical Blank to react to the collisions and clear collisions before the next frame begins. 
+Because collisions are only a single bit, collisions are quite obviously not additive. No matter how many times and different locations a collision between pixels occurs within one frame there is only 1 bit to indicate there was a collision. A set collision bit informs a program that it can examine the related objects to identify collision locations and then decide how to react for each location. 
+Since HITCLR and collision detection is real-time, Display List Interrupts can divide the display into sections with HITCLR used at the beginning of each section and separate collision evaluation at the end of each section. 
+When the "fifth Player" option is enabled (See PRIOR/GPRIOR register) the only change is the Missiles 0 to 3 switch from displaying the color of the associated Player object to displaying the value of COLPF3. The new "Player's" collisions are still reported for the individual Missiles. 
+Player/Missile to Playfield Collisions 
+Each bit indicates a pixel of the Player/Missile object has intersected a pixel of the specified Playfield color object. There is no collision registered for the background color. 
+Obscured intersections will also register collisions. If a Player/Missile object priority is behind a Playfield color register and another Player/Missile object priority is higher (foreground) than the Playfield, and the foreground Player/Missile pixels obscure both the Playfield and the Player/Missile object behind the Playfield, then the collision between the Playfield and both the background and foreground Player/Missile objects will register. 
+High-resolution, 1/2 color clock pixel modes (ANTIC Modes 2, 3, and F) are treated differently. The "background" color rendered as COLPF2 where pixel values are 0 does not register a collision. High-resolution pixels are rendered as the luminance value from COLPF1. The pixels are grouped together in color clock-wide pairs (pixels 0 and 1, pixels 2 and 3, continuing to pixels 318 and 319). Where either pixel of the pair is 1 a collision is detected between the Player or Missile pixels and Playfield color COLPF2. 
+GTIA modes 9 and 11 do not process playfield collisions. In GTIA mode 10 Playfield collisions will register where Playfield pixels use COLPF0 through COLPF3 
+M0PF $D000 Read 
+Missile 0 to Playfield collisions 
+M1PF $D001 Read 
+Missile 1 to Playfield collisions 
+M2PF $D002 Read 
+Missile 2 to Playfield collisions 
+M3PF $D003 Read 
+Missile 3 to Playfield collisions 
+P0PF $D004 Read 
+Player 0 to Playfield collisions 
+Player/Missile and Playfield Color and Luminance 
+All Player/Missile objects' pixels and all Playfield pixels in the default CTIA/GTIA color interpretation mode use indirection to specify color. Indirection means that the values of the pixel data do not directly specify the color, but point to another source of information for color. CTIA/GTIA contain hardware registers that set the values used for colors, and the pixels' information refer to these registers. The palette on the Atari is 8 luminance levels of 16 colors for a total 128 colors. The color indirection flexibility allows a program to tailor the screen's colors to fit the purpose of the program's display. 
+All hardware color registers have corresponding shadow registers. 
+COLPM0 $D012 Write 
+SHADOW: PCOLOR0 $02C0 Color/luminance of Player and Missile 0. 
+
