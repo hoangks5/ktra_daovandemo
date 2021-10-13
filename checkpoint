@@ -1,2 +1,2 @@
-model_checkpoint_path: "/content/model.tflearn"
-all_model_checkpoint_paths: "/content/model.tflearn"
+model_checkpoint_path: "C:\\Users\\Hoang Nguyen\\Desktop\\test_daovan\\model.tflearn"
+all_model_checkpoint_paths: "C:\\Users\\Hoang Nguyen\\Desktop\\test_daovan\\model.tflearn"
